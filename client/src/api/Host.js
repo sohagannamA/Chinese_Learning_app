@@ -1,3 +1,3 @@
 export const Host = {
-  host: "http://localhost:5000/",
+  host: "https://chinese-learning-app.onrender.com/",
 };
