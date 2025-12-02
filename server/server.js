@@ -9,7 +9,10 @@ import wordRoutes from "./routes/addWordRoutes.js";
 dotenv.config();
 
 const app = express();
-app.use(cors());
+app.use(cors({
+  origin: "https://chinese-learning-app-1.onrender.com", 
+  credentials: true
+}));
 app.use(express.json());
 
 // DB Connection
