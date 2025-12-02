@@ -1,0 +1,3872 @@
+[
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1498"
+    },
+    "chinese": "苹果",
+    "pinyin": "píngguǒ",
+    "english": "apple",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一个苹果",
+        "english": "One apple",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1499"
+        }
+      },
+      {
+        "chinese": "我喜欢吃苹果。",
+        "english": "I like to eat apples.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e149a"
+        }
+      },
+      {
+        "chinese": "苹果很甜。",
+        "english": "The apple is very sweet.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e149b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e149c"
+    },
+    "chinese": "香蕉",
+    "pinyin": "xiāngjiāo",
+    "english": "banana",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一根香蕉",
+        "english": "One banana",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e149d"
+        }
+      },
+      {
+        "chinese": "香蕉是黄色的。",
+        "english": "Bananas are yellow.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e149e"
+        }
+      },
+      {
+        "chinese": "猴子爱吃香蕉。",
+        "english": "Monkeys love to eat bananas.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e149f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14a0"
+    },
+    "chinese": "橙子",
+    "pinyin": "chéngzi",
+    "english": "orange",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一个橙子",
+        "english": "One orange",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a1"
+        }
+      },
+      {
+        "chinese": "橙子有很多维生素C。",
+        "english": "Oranges have a lot of vitamin C.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a2"
+        }
+      },
+      {
+        "chinese": "我想喝橙汁。",
+        "english": "I want to drink orange juice.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14a4"
+    },
+    "chinese": "草莓",
+    "pinyin": "cǎoméi",
+    "english": "strawberry",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一颗草莓",
+        "english": "One strawberry",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a5"
+        }
+      },
+      {
+        "chinese": "草莓蛋糕很好吃。",
+        "english": "Strawberry cake is delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a6"
+        }
+      },
+      {
+        "chinese": "春天是吃草莓的季节。",
+        "english": "Spring is the season to eat strawberries.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14a8"
+    },
+    "chinese": "葡萄",
+    "pinyin": "pútáo",
+    "english": "grape",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一串葡萄",
+        "english": "A bunch of grapes",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14a9"
+        }
+      },
+      {
+        "chinese": "红葡萄和绿葡萄。",
+        "english": "Red grapes and green grapes.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14aa"
+        }
+      },
+      {
+        "chinese": "葡萄可以用来做葡萄酒。",
+        "english": "Grapes can be used to make wine.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ab"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14ac"
+    },
+    "chinese": "西瓜",
+    "pinyin": "xīguā",
+    "english": "watermelon",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一片西瓜",
+        "english": "A slice of watermelon",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ad"
+        }
+      },
+      {
+        "chinese": "夏天吃西瓜很解渴。",
+        "english": "Eating watermelon in summer is very refreshing.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ae"
+        }
+      },
+      {
+        "chinese": "这个西瓜很大。",
+        "english": "This watermelon is very big.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14af"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14b0"
+    },
+    "chinese": "芒果",
+    "pinyin": "mángguǒ",
+    "english": "mango",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一个芒果",
+        "english": "One mango",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b1"
+        }
+      },
+      {
+        "chinese": "芒果很甜，很好吃。",
+        "english": "Mangoes are sweet and delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b2"
+        }
+      },
+      {
+        "chinese": "我喜欢芒果冰沙。",
+        "english": "I like mango smoothies.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14b4"
+    },
+    "chinese": "菠萝",
+    "pinyin": "bōluó",
+    "english": "pineapple",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一个菠萝",
+        "english": "One pineapple",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b5"
+        }
+      },
+      {
+        "chinese": "菠萝有点酸。",
+        "english": "Pineapple is a bit sour.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b6"
+        }
+      },
+      {
+        "chinese": "吃菠萝前要先泡盐水。",
+        "english": "You need to soak pineapple in salt water before eating it.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14b8"
+    },
+    "chinese": "桃子",
+    "pinyin": "táozi",
+    "english": "peach",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一个桃子",
+        "english": "One peach",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14b9"
+        }
+      },
+      {
+        "chinese": "水蜜桃很多汁。",
+        "english": "Honey peaches are very juicy.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ba"
+        }
+      },
+      {
+        "chinese": "桃子代表长寿。",
+        "english": "The peach symbolizes longevity.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14bb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14bc"
+    },
+    "chinese": "榴莲",
+    "pinyin": "liúlián",
+    "english": "durian",
+    "category": "FRUIT",
+    "sentences": [
+      {
+        "chinese": "一块榴莲",
+        "english": "A piece of durian",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14bd"
+        }
+      },
+      {
+        "chinese": "榴莲的味道很特别。",
+        "english": "Durian has a very unique smell.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14be"
+        }
+      },
+      {
+        "chinese": "有些人很喜欢榴莲，有些人不喜欢。",
+        "english": "Some people really like durian, others don't.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14bf"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14c0"
+    },
+    "chinese": "爸爸",
+    "pinyin": "bàba",
+    "english": "father",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "我爸爸是老师。",
+        "english": "My father is a teacher.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c1"
+        }
+      },
+      {
+        "chinese": "爸爸下班回家了。",
+        "english": "Dad came home from work.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c2"
+        }
+      },
+      {
+        "chinese": "爸爸在做饭。",
+        "english": "Dad is cooking.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14c4"
+    },
+    "chinese": "妈妈",
+    "pinyin": "māma",
+    "english": "mother",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "我妈妈是医生。",
+        "english": "My mother is a doctor.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c5"
+        }
+      },
+      {
+        "chinese": "妈妈在打电话。",
+        "english": "Mom is on the phone.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c6"
+        }
+      },
+      {
+        "chinese": "我爱妈妈。",
+        "english": "I love mom.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14c8"
+    },
+    "chinese": "哥哥",
+    "pinyin": "gēge",
+    "english": "older brother",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "我有一个哥哥。",
+        "english": "I have an older brother.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14c9"
+        }
+      },
+      {
+        "chinese": "哥哥在上大学。",
+        "english": "My older brother is in college.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ca"
+        }
+      },
+      {
+        "chinese": "哥哥比我大五岁。",
+        "english": "My older brother is five years older than me.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14cb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14cc"
+    },
+    "chinese": "弟弟",
+    "pinyin": "dìdi",
+    "english": "younger brother",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "我的弟弟很可爱。",
+        "english": "My younger brother is very cute.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14cd"
+        }
+      },
+      {
+        "chinese": "弟弟在玩玩具。",
+        "english": "My younger brother is playing with toys.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ce"
+        }
+      },
+      {
+        "chinese": "我教弟弟写作业。",
+        "english": "I help my younger brother with his homework.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14cf"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14d0"
+    },
+    "chinese": "姐姐",
+    "pinyin": "jiějie",
+    "english": "older sister",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "姐姐很漂亮。",
+        "english": "My older sister is very beautiful.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d1"
+        }
+      },
+      {
+        "chinese": "姐姐结婚了。",
+        "english": "My older sister is married.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d2"
+        }
+      },
+      {
+        "chinese": "姐姐教我弹钢琴。",
+        "english": "My older sister teaches me to play piano.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14d4"
+    },
+    "chinese": "妹妹",
+    "pinyin": "mèimei",
+    "english": "younger sister",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "我的妹妹三岁了。",
+        "english": "My younger sister is three years old.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d5"
+        }
+      },
+      {
+        "chinese": "妹妹在唱歌。",
+        "english": "My younger sister is singing.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d6"
+        }
+      },
+      {
+        "chinese": "我照顾妹妹。",
+        "english": "I take care of my younger sister.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14d8"
+    },
+    "chinese": "爷爷",
+    "pinyin": "yéye",
+    "english": "grandfather (paternal)",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "爷爷今年七十岁。",
+        "english": "Grandfather is seventy years old this year.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14d9"
+        }
+      },
+      {
+        "chinese": "爷爷喜欢喝茶。",
+        "english": "Grandfather likes to drink tea.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14da"
+        }
+      },
+      {
+        "chinese": "爷爷在花园里。",
+        "english": "Grandfather is in the garden.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14db"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14dc"
+    },
+    "chinese": "奶奶",
+    "pinyin": "nǎinai",
+    "english": "grandmother (paternal)",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "奶奶做的饭很好吃。",
+        "english": "Grandmother's cooking is delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14dd"
+        }
+      },
+      {
+        "chinese": "奶奶在看电视。",
+        "english": "Grandmother is watching TV.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14de"
+        }
+      },
+      {
+        "chinese": "我爱我的奶奶。",
+        "english": "I love my grandmother.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14df"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14e0"
+    },
+    "chinese": "外公",
+    "pinyin": "wàigōng",
+    "english": "grandfather (maternal)",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "外公以前是军人。",
+        "english": "Grandfather (maternal) was a soldier before.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e1"
+        }
+      },
+      {
+        "chinese": "外公住在乡下。",
+        "english": "Grandfather (maternal) lives in the countryside.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e2"
+        }
+      },
+      {
+        "chinese": "我周末去看外公。",
+        "english": "I visit my grandfather (maternal) on weekends.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14e4"
+    },
+    "chinese": "外婆",
+    "pinyin": "wàipó",
+    "english": "grandmother (maternal)",
+    "category": "FAMILY",
+    "sentences": [
+      {
+        "chinese": "外婆很疼我。",
+        "english": "Grandmother (maternal) dotes on me.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e5"
+        }
+      },
+      {
+        "chinese": "外婆会讲故事。",
+        "english": "Grandmother (maternal) can tell stories.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e6"
+        }
+      },
+      {
+        "chinese": "外婆的手艺很好。",
+        "english": "Grandmother (maternal) is very skilled.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14e8"
+    },
+    "chinese": "手机",
+    "pinyin": "shǒujī",
+    "english": "mobile phone",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "我的手机没电了。",
+        "english": "My mobile phone is out of battery.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14e9"
+        }
+      },
+      {
+        "chinese": "他用手机拍照。",
+        "english": "He takes photos with his mobile phone.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ea"
+        }
+      },
+      {
+        "chinese": "智能手机很流行。",
+        "english": "Smartphones are very popular.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14eb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14ec"
+    },
+    "chinese": "电脑",
+    "pinyin": "diànnǎo",
+    "english": "computer",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "我在用电脑工作。",
+        "english": "I'm using the computer for work.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ed"
+        }
+      },
+      {
+        "chinese": "笔记本电脑很方便。",
+        "english": "Laptops are very convenient.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ee"
+        }
+      },
+      {
+        "chinese": "电脑需要修理。",
+        "english": "The computer needs repair.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ef"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14f0"
+    },
+    "chinese": "电视",
+    "pinyin": "diànshì",
+    "english": "television",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "我们晚上看电视。",
+        "english": "We watch TV in the evening.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f1"
+        }
+      },
+      {
+        "chinese": "智能电视可以上网。",
+        "english": "Smart TVs can access the internet.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f2"
+        }
+      },
+      {
+        "chinese": "电视屏幕很大。",
+        "english": "The TV screen is very big.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14f4"
+    },
+    "chinese": "平板电脑",
+    "pinyin": "píngbǎn diànnǎo",
+    "english": "tablet",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "我用平板电脑看视频。",
+        "english": "I use my tablet to watch videos.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f5"
+        }
+      },
+      {
+        "chinese": "平板电脑比电脑轻。",
+        "english": "Tablets are lighter than computers.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f6"
+        }
+      },
+      {
+        "chinese": "孩子喜欢玩平板电脑。",
+        "english": "Children like to play with tablets.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14f8"
+    },
+    "chinese": "耳机",
+    "pinyin": "ěrjī",
+    "english": "headphones",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "无线耳机很方便。",
+        "english": "Wireless headphones are convenient.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14f9"
+        }
+      },
+      {
+        "chinese": "我听音乐用耳机。",
+        "english": "I use headphones to listen to music.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14fa"
+        }
+      },
+      {
+        "chinese": "这个耳机音质很好。",
+        "english": "These headphones have good sound quality.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14fb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e14fc"
+    },
+    "chinese": "充电器",
+    "pinyin": "chōngdiàn qì",
+    "english": "charger",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "我需要手机充电器。",
+        "english": "I need a phone charger.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14fd"
+        }
+      },
+      {
+        "chinese": "快充充电器很快。",
+        "english": "Fast chargers are very quick.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14fe"
+        }
+      },
+      {
+        "chinese": "别忘了带充电器。",
+        "english": "Don't forget to bring the charger.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e14ff"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1500"
+    },
+    "chinese": "冰箱",
+    "pinyin": "bīngxiāng",
+    "english": "refrigerator",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "冰箱里有食物。",
+        "english": "There is food in the refrigerator.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1501"
+        }
+      },
+      {
+        "chinese": "新冰箱很省电。",
+        "english": "The new refrigerator is energy efficient.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1502"
+        }
+      },
+      {
+        "chinese": "冰箱需要清洗。",
+        "english": "The refrigerator needs cleaning.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1503"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1504"
+    },
+    "chinese": "洗衣机",
+    "pinyin": "xǐyījī",
+    "english": "washing machine",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "洗衣机正在洗衣服。",
+        "english": "The washing machine is washing clothes.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1505"
+        }
+      },
+      {
+        "chinese": "全自动洗衣机很方便。",
+        "english": "Fully automatic washing machines are convenient.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1506"
+        }
+      },
+      {
+        "chinese": "我需要买新洗衣机。",
+        "english": "I need to buy a new washing machine.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1507"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1508"
+    },
+    "chinese": "空调",
+    "pinyin": "kōngtiáo",
+    "english": "air conditioner",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "夏天需要开空调。",
+        "english": "We need to turn on the air conditioner in summer.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1509"
+        }
+      },
+      {
+        "chinese": "空调温度调低一点。",
+        "english": "Turn the air conditioner temperature down a bit.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e150a"
+        }
+      },
+      {
+        "chinese": "新空调很安静。",
+        "english": "The new air conditioner is very quiet.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e150b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e150c"
+    },
+    "chinese": "微波炉",
+    "pinyin": "wēibōlú",
+    "english": "microwave oven",
+    "category": "ELECTRONIC",
+    "sentences": [
+      {
+        "chinese": "用微波炉热饭。",
+        "english": "Use the microwave to heat up food.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e150d"
+        }
+      },
+      {
+        "chinese": "微波炉很方便。",
+        "english": "Microwave ovens are convenient.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e150e"
+        }
+      },
+      {
+        "chinese": "小心微波炉烫。",
+        "english": "Be careful, the microwave is hot.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e150f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1510"
+    },
+    "chinese": "人",
+    "pinyin": "rén",
+    "english": "person",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "这里有很多人。",
+        "english": "There are many people here.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1511"
+        }
+      },
+      {
+        "chinese": "他是一个好人。",
+        "english": "He is a good person.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1512"
+        }
+      },
+      {
+        "chinese": "每个人都不一样。",
+        "english": "Every person is different.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1513"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1514"
+    },
+    "chinese": "朋友",
+    "pinyin": "péngyou",
+    "english": "friend",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "他是我的好朋友。",
+        "english": "He is my good friend.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1515"
+        }
+      },
+      {
+        "chinese": "我和朋友一起去玩。",
+        "english": "I go play with my friends.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1516"
+        }
+      },
+      {
+        "chinese": "朋友之间要互相帮助。",
+        "english": "Friends should help each other.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1517"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1518"
+    },
+    "chinese": "老师",
+    "pinyin": "lǎoshī",
+    "english": "teacher",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "张老师教我们中文。",
+        "english": "Teacher Zhang teaches us Chinese.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1519"
+        }
+      },
+      {
+        "chinese": "老师很关心学生。",
+        "english": "The teacher cares about the students.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e151a"
+        }
+      },
+      {
+        "chinese": "我想成为一名老师。",
+        "english": "I want to become a teacher.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e151b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e151c"
+    },
+    "chinese": "学生",
+    "pinyin": "xuéshēng",
+    "english": "student",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "我是大学生。",
+        "english": "I am a university student.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e151d"
+        }
+      },
+      {
+        "chinese": "学生们在教室里。",
+        "english": "The students are in the classroom.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e151e"
+        }
+      },
+      {
+        "chinese": "好学生努力学习。",
+        "english": "Good students study hard.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e151f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1520"
+    },
+    "chinese": "医生",
+    "pinyin": "yīshēng",
+    "english": "doctor",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "医生给我看病。",
+        "english": "The doctor examined me.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1521"
+        }
+      },
+      {
+        "chinese": "医院里有很多医生。",
+        "english": "There are many doctors in the hospital.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1522"
+        }
+      },
+      {
+        "chinese": "她想成为一名医生。",
+        "english": "She wants to become a doctor.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1523"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1524"
+    },
+    "chinese": "工人",
+    "pinyin": "gōngrén",
+    "english": "worker",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "工人在建房子。",
+        "english": "Workers are building a house.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1525"
+        }
+      },
+      {
+        "chinese": "工厂里有工人。",
+        "english": "There are workers in the factory.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1526"
+        }
+      },
+      {
+        "chinese": "工人很辛苦。",
+        "english": "Workers work very hard.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1527"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1528"
+    },
+    "chinese": "警察",
+    "pinyin": "jǐngchá",
+    "english": "police officer",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "警察在指挥交通。",
+        "english": "The police officer is directing traffic.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1529"
+        }
+      },
+      {
+        "chinese": "我们需要帮助找警察。",
+        "english": "We need help, find a police officer.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e152a"
+        }
+      },
+      {
+        "chinese": "警察保护我们。",
+        "english": "Police officers protect us.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e152b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e152c"
+    },
+    "chinese": "司机",
+    "pinyin": "sījī",
+    "english": "driver",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "出租车司机在等我。",
+        "english": "The taxi driver is waiting for me.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e152d"
+        }
+      },
+      {
+        "chinese": "公交车司机很友好。",
+        "english": "The bus driver is very friendly.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e152e"
+        }
+      },
+      {
+        "chinese": "他是一名卡车司机。",
+        "english": "He is a truck driver.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e152f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1530"
+    },
+    "chinese": "厨师",
+    "pinyin": "chúshī",
+    "english": "chef",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "厨师在厨房做饭。",
+        "english": "The chef is cooking in the kitchen.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1531"
+        }
+      },
+      {
+        "chinese": "这家餐厅的厨师很好。",
+        "english": "The chef at this restaurant is very good.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1532"
+        }
+      },
+      {
+        "chinese": "他是一名专业厨师。",
+        "english": "He is a professional chef.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1533"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1534"
+    },
+    "chinese": "作家",
+    "pinyin": "zuòjiā",
+    "english": "writer",
+    "category": "PERSON",
+    "sentences": [
+      {
+        "chinese": "鲁迅是一位著名作家。",
+        "english": "Lu Xun is a famous writer.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1535"
+        }
+      },
+      {
+        "chinese": "作家在写小说。",
+        "english": "The writer is writing a novel.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1536"
+        }
+      },
+      {
+        "chinese": "我想成为作家。",
+        "english": "I want to become a writer.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1537"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1538"
+    },
+    "chinese": "米饭",
+    "pinyin": "mǐfàn",
+    "english": "rice",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "我每天吃米饭。",
+        "english": "I eat rice every day.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1539"
+        }
+      },
+      {
+        "chinese": "米饭是中国人的主食。",
+        "english": "Rice is the staple food for Chinese people.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e153a"
+        }
+      },
+      {
+        "chinese": "这碗米饭很香。",
+        "english": "This bowl of rice is very fragrant.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e153b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e153c"
+    },
+    "chinese": "面条",
+    "pinyin": "miàntiáo",
+    "english": "noodles",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "我喜欢吃面条。",
+        "english": "I like to eat noodles.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e153d"
+        }
+      },
+      {
+        "chinese": "牛肉面很好吃。",
+        "english": "Beef noodles are delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e153e"
+        }
+      },
+      {
+        "chinese": "面条要趁热吃。",
+        "english": "Noodles should be eaten while hot.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e153f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1540"
+    },
+    "chinese": "面包",
+    "pinyin": "miànbāo",
+    "english": "bread",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "早餐吃面包。",
+        "english": "Eat bread for breakfast.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1541"
+        }
+      },
+      {
+        "chinese": "新鲜面包很软。",
+        "english": "Fresh bread is very soft.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1542"
+        }
+      },
+      {
+        "chinese": "我买了一个面包。",
+        "english": "I bought a loaf of bread.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1543"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1544"
+    },
+    "chinese": "鸡蛋",
+    "pinyin": "jīdàn",
+    "english": "egg",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "我早餐吃鸡蛋。",
+        "english": "I eat eggs for breakfast.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1545"
+        }
+      },
+      {
+        "chinese": "煮鸡蛋需要十分钟。",
+        "english": "Boiling eggs takes ten minutes.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1546"
+        }
+      },
+      {
+        "chinese": "鸡蛋炒饭很好吃。",
+        "english": "Egg fried rice is delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1547"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1548"
+    },
+    "chinese": "牛奶",
+    "pinyin": "niúnǎi",
+    "english": "milk",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "我每天喝牛奶。",
+        "english": "I drink milk every day.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1549"
+        }
+      },
+      {
+        "chinese": "热牛奶帮助睡眠。",
+        "english": "Warm milk helps with sleep.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e154a"
+        }
+      },
+      {
+        "chinese": "这瓶牛奶过期了。",
+        "english": "This bottle of milk is expired.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e154b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e154c"
+    },
+    "chinese": "肉",
+    "pinyin": "ròu",
+    "english": "meat",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "猪肉很贵。",
+        "english": "Pork is expensive.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e154d"
+        }
+      },
+      {
+        "chinese": "我不吃牛肉。",
+        "english": "I don't eat beef.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e154e"
+        }
+      },
+      {
+        "chinese": "鸡肉比较健康。",
+        "english": "Chicken is healthier.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e154f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1550"
+    },
+    "chinese": "蔬菜",
+    "pinyin": "shūcài",
+    "english": "vegetables",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "多吃蔬菜对身体好。",
+        "english": "Eating more vegetables is good for health.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1551"
+        }
+      },
+      {
+        "chinese": "新鲜蔬菜很营养。",
+        "english": "Fresh vegetables are nutritious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1552"
+        }
+      },
+      {
+        "chinese": "我去市场买蔬菜。",
+        "english": "I go to the market to buy vegetables.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1553"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1554"
+    },
+    "chinese": "鱼",
+    "pinyin": "yú",
+    "english": "fish",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "清蒸鱼很好吃。",
+        "english": "Steamed fish is delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1555"
+        }
+      },
+      {
+        "chinese": "每周吃一次鱼。",
+        "english": "Eat fish once a week.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1556"
+        }
+      },
+      {
+        "chinese": "鱼肉很有营养。",
+        "english": "Fish is very nutritious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1557"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1558"
+    },
+    "chinese": "汤",
+    "pinyin": "tāng",
+    "english": "soup",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "妈妈做的汤很好喝。",
+        "english": "The soup my mom makes is delicious.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1559"
+        }
+      },
+      {
+        "chinese": "冬天喝热汤很舒服。",
+        "english": "Drinking hot soup in winter is comfortable.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e155a"
+        }
+      },
+      {
+        "chinese": "这碗汤太咸了。",
+        "english": "This bowl of soup is too salty.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e155b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e155c"
+    },
+    "chinese": "水",
+    "pinyin": "shuǐ",
+    "english": "water",
+    "category": "FOOD",
+    "sentences": [
+      {
+        "chinese": "多喝水对身体好。",
+        "english": "Drinking more water is good for health.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e155d"
+        }
+      },
+      {
+        "chinese": "请给我一杯水。",
+        "english": "Please give me a glass of water.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e155e"
+        }
+      },
+      {
+        "chinese": "热水可以泡茶。",
+        "english": "Hot water can be used to make tea.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e155f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1560"
+    },
+    "chinese": "学习",
+    "pinyin": "xuéxí",
+    "english": "study/learn",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我在学习中文。",
+        "english": "I am studying Chinese.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1561"
+        }
+      },
+      {
+        "chinese": "好好学习，天天向上。",
+        "english": "Study hard and make progress every day.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1562"
+        }
+      },
+      {
+        "chinese": "他学习很努力。",
+        "english": "He studies very hard.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1563"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1564"
+    },
+    "chinese": "书",
+    "pinyin": "shū",
+    "english": "book",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我在看书。",
+        "english": "I am reading a book.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1565"
+        }
+      },
+      {
+        "chinese": "这本书很有趣。",
+        "english": "This book is very interesting.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1566"
+        }
+      },
+      {
+        "chinese": "图书馆有很多书。",
+        "english": "There are many books in the library.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1567"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1568"
+    },
+    "chinese": "笔",
+    "pinyin": "bǐ",
+    "english": "pen",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我用笔写字。",
+        "english": "I use a pen to write.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1569"
+        }
+      },
+      {
+        "chinese": "这支笔没水了。",
+        "english": "This pen is out of ink.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e156a"
+        }
+      },
+      {
+        "chinese": "请借我一支笔。",
+        "english": "Please lend me a pen.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e156b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e156c"
+    },
+    "chinese": "纸",
+    "pinyin": "zhǐ",
+    "english": "paper",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "请给我一张纸。",
+        "english": "Please give me a piece of paper.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e156d"
+        }
+      },
+      {
+        "chinese": "这张纸很白。",
+        "english": "This paper is very white.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e156e"
+        }
+      },
+      {
+        "chinese": "我在纸上写字。",
+        "english": "I write on paper.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e156f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1570"
+    },
+    "chinese": "教室",
+    "pinyin": "jiàoshì",
+    "english": "classroom",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "教室里有学生。",
+        "english": "There are students in the classroom.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1571"
+        }
+      },
+      {
+        "chinese": "我们的教室很干净。",
+        "english": "Our classroom is very clean.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1572"
+        }
+      },
+      {
+        "chinese": "请在教室里等我。",
+        "english": "Please wait for me in the classroom.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1573"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1574"
+    },
+    "chinese": "作业",
+    "pinyin": "zuòyè",
+    "english": "homework",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我有好多作业。",
+        "english": "I have a lot of homework.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1575"
+        }
+      },
+      {
+        "chinese": "作业做完了吗？",
+        "english": "Have you finished your homework?",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1576"
+        }
+      },
+      {
+        "chinese": "老师布置了作业。",
+        "english": "The teacher assigned homework.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1577"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1578"
+    },
+    "chinese": "考试",
+    "pinyin": "kǎoshì",
+    "english": "exam",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "明天有考试。",
+        "english": "There is an exam tomorrow.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1579"
+        }
+      },
+      {
+        "chinese": "考试很难。",
+        "english": "The exam is difficult.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e157a"
+        }
+      },
+      {
+        "chinese": "我通过了考试。",
+        "english": "I passed the exam.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e157b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e157c"
+    },
+    "chinese": "字典",
+    "pinyin": "zìdiǎn",
+    "english": "dictionary",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我有一本字典。",
+        "english": "I have a dictionary.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e157d"
+        }
+      },
+      {
+        "chinese": "用字典查生词。",
+        "english": "Use a dictionary to look up new words.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e157e"
+        }
+      },
+      {
+        "chinese": "电子字典很方便。",
+        "english": "Electronic dictionaries are convenient.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e157f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1580"
+    },
+    "chinese": "练习",
+    "pinyin": "liànxí",
+    "english": "practice",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我需要多练习。",
+        "english": "I need more practice.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1581"
+        }
+      },
+      {
+        "chinese": "练习说中文。",
+        "english": "Practice speaking Chinese.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1582"
+        }
+      },
+      {
+        "chinese": "每天练习很重要。",
+        "english": "Daily practice is important.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1583"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1584"
+    },
+    "chinese": "问题",
+    "pinyin": "wèntí",
+    "english": "question",
+    "category": "STUDY",
+    "sentences": [
+      {
+        "chinese": "我有一个问题。",
+        "english": "I have a question.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1585"
+        }
+      },
+      {
+        "chinese": "老师回答问题。",
+        "english": "The teacher answers questions.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1586"
+        }
+      },
+      {
+        "chinese": "这个问题很难。",
+        "english": "This question is difficult.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1587"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1588"
+    },
+    "chinese": "高兴",
+    "pinyin": "gāoxìng",
+    "english": "happy",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "我今天很高兴。",
+        "english": "I am very happy today.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1589"
+        }
+      },
+      {
+        "chinese": "他高兴地笑了。",
+        "english": "He smiled happily.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e158a"
+        }
+      },
+      {
+        "chinese": "好消息让人高兴。",
+        "english": "Good news makes people happy.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e158b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e158c"
+    },
+    "chinese": "生气",
+    "pinyin": "shēngqì",
+    "english": "angry",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "不要生气。",
+        "english": "Don't be angry.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e158d"
+        }
+      },
+      {
+        "chinese": "他生气了。",
+        "english": "He is angry.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e158e"
+        }
+      },
+      {
+        "chinese": "为什么生气？",
+        "english": "Why are you angry?",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e158f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1590"
+    },
+    "chinese": "伤心",
+    "pinyin": "shāngxīn",
+    "english": "sad",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "她看起来很伤心。",
+        "english": "She looks very sad.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1591"
+        }
+      },
+      {
+        "chinese": "别伤心了。",
+        "english": "Don't be sad.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1592"
+        }
+      },
+      {
+        "chinese": "伤心的时候想哭。",
+        "english": "When sad, you want to cry.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1593"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1594"
+    },
+    "chinese": "害怕",
+    "pinyin": "hàipà",
+    "english": "afraid",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "我害怕黑暗。",
+        "english": "I am afraid of the dark.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1595"
+        }
+      },
+      {
+        "chinese": "孩子害怕打雷。",
+        "english": "Children are afraid of thunder.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1596"
+        }
+      },
+      {
+        "chinese": "不要害怕。",
+        "english": "Don't be afraid.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1597"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e1598"
+    },
+    "chinese": "爱",
+    "pinyin": "ài",
+    "english": "love",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "我爱你。",
+        "english": "I love you.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e1599"
+        }
+      },
+      {
+        "chinese": "父母爱孩子。",
+        "english": "Parents love their children.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e159a"
+        }
+      },
+      {
+        "chinese": "爱是美好的。",
+        "english": "Love is beautiful.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e159b"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e159c"
+    },
+    "chinese": "喜欢",
+    "pinyin": "xǐhuān",
+    "english": "like",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "我喜欢中文。",
+        "english": "I like Chinese.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e159d"
+        }
+      },
+      {
+        "chinese": "你喜欢什么颜色？",
+        "english": "What color do you like?",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e159e"
+        }
+      },
+      {
+        "chinese": "她喜欢唱歌。",
+        "english": "She likes singing.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e159f"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15a0"
+    },
+    "chinese": "紧张",
+    "pinyin": "jǐnzhāng",
+    "english": "nervous",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "考试前我很紧张。",
+        "english": "I am nervous before exams.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a1"
+        }
+      },
+      {
+        "chinese": "别紧张。",
+        "english": "Don't be nervous.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a2"
+        }
+      },
+      {
+        "chinese": "第一次演讲很紧张。",
+        "english": "The first speech makes people nervous.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15a4"
+    },
+    "chinese": "惊讶",
+    "pinyin": "jīngyà",
+    "english": "surprised",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "我很惊讶。",
+        "english": "I am surprised.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a5"
+        }
+      },
+      {
+        "chinese": "这个消息让人惊讶。",
+        "english": "This news is surprising.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a6"
+        }
+      },
+      {
+        "chinese": "他惊讶地看着我。",
+        "english": "He looked at me with surprise.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15a8"
+    },
+    "chinese": "累",
+    "pinyin": "lèi",
+    "english": "tired",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "我今天很累。",
+        "english": "I am very tired today.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15a9"
+        }
+      },
+      {
+        "chinese": "工作了一天，累了。",
+        "english": "I worked all day, I'm tired.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15aa"
+        }
+      },
+      {
+        "chinese": "累的时候想休息。",
+        "english": "When tired, you want to rest.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ab"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15ac"
+    },
+    "chinese": "兴奋",
+    "pinyin": "xīngfèn",
+    "english": "excited",
+    "category": "EMOTION",
+    "sentences": [
+      {
+        "chinese": "孩子们很兴奋。",
+        "english": "The children are very excited.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ad"
+        }
+      },
+      {
+        "chinese": "听到好消息很兴奋。",
+        "english": "Hearing good news makes people excited.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ae"
+        }
+      },
+      {
+        "chinese": "兴奋得睡不着。",
+        "english": "Too excited to sleep.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15af"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15b0"
+    },
+    "chinese": "红色",
+    "pinyin": "hóngsè",
+    "english": "red",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "红色很漂亮。",
+        "english": "Red is beautiful.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b1"
+        }
+      },
+      {
+        "chinese": "我喜欢红色的衣服。",
+        "english": "I like red clothes.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b2"
+        }
+      },
+      {
+        "chinese": "红绿灯有红色。",
+        "english": "Traffic lights have red.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15b4"
+    },
+    "chinese": "蓝色",
+    "pinyin": "lánsè",
+    "english": "blue",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "天空是蓝色的。",
+        "english": "The sky is blue.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b5"
+        }
+      },
+      {
+        "chinese": "大海也是蓝色的。",
+        "english": "The ocean is also blue.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b6"
+        }
+      },
+      {
+        "chinese": "蓝色的眼睛很特别。",
+        "english": "Blue eyes are special.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15b8"
+    },
+    "chinese": "黄色",
+    "pinyin": "huángsè",
+    "english": "yellow",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "香蕉是黄色的。",
+        "english": "Bananas are yellow.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15b9"
+        }
+      },
+      {
+        "chinese": "黄色的花很漂亮。",
+        "english": "Yellow flowers are beautiful.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ba"
+        }
+      },
+      {
+        "chinese": "太阳是黄色的。",
+        "english": "The sun is yellow.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15bb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15bc"
+    },
+    "chinese": "绿色",
+    "pinyin": "lǜsè",
+    "english": "green",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "草是绿色的。",
+        "english": "Grass is green.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15bd"
+        }
+      },
+      {
+        "chinese": "树叶是绿色的。",
+        "english": "Leaves are green.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15be"
+        }
+      },
+      {
+        "chinese": "绿色代表生命。",
+        "english": "Green represents life.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15bf"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15c0"
+    },
+    "chinese": "白色",
+    "pinyin": "báisè",
+    "english": "white",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "雪是白色的。",
+        "english": "Snow is white.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c1"
+        }
+      },
+      {
+        "chinese": "云也是白色的。",
+        "english": "Clouds are also white.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c2"
+        }
+      },
+      {
+        "chinese": "白衬衫很干净。",
+        "english": "White shirts look clean.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15c4"
+    },
+    "chinese": "黑色",
+    "pinyin": "hēisè",
+    "english": "black",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "头发是黑色的。",
+        "english": "Hair is black.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c5"
+        }
+      },
+      {
+        "chinese": "熊猫有黑色和白色。",
+        "english": "Pandas have black and white.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c6"
+        }
+      },
+      {
+        "chinese": "黑色的车很酷。",
+        "english": "Black cars are cool.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15c8"
+    },
+    "chinese": "紫色",
+    "pinyin": "zǐsè",
+    "english": "purple",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "葡萄是紫色的。",
+        "english": "Grapes are purple.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15c9"
+        }
+      },
+      {
+        "chinese": "紫色的花很漂亮。",
+        "english": "Purple flowers are beautiful.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ca"
+        }
+      },
+      {
+        "chinese": "她喜欢紫色。",
+        "english": "She likes purple.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15cb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15cc"
+    },
+    "chinese": "橙色",
+    "pinyin": "chéngsè",
+    "english": "orange",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "橙子是橙色的。",
+        "english": "Oranges are orange.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15cd"
+        }
+      },
+      {
+        "chinese": "胡萝卜是橙色的。",
+        "english": "Carrots are orange.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ce"
+        }
+      },
+      {
+        "chinese": "夕阳是橙色的。",
+        "english": "The sunset is orange.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15cf"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15d0"
+    },
+    "chinese": "粉色",
+    "pinyin": "fěnsè",
+    "english": "pink",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "樱花是粉色的。",
+        "english": "Cherry blossoms are pink.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d1"
+        }
+      },
+      {
+        "chinese": "小女孩喜欢粉色。",
+        "english": "Little girls like pink.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d2"
+        }
+      },
+      {
+        "chinese": "粉色的裙子很可爱。",
+        "english": "Pink dresses are cute.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15d4"
+    },
+    "chinese": "棕色",
+    "pinyin": "zōngsè",
+    "english": "brown",
+    "category": "COLOR",
+    "sentences": [
+      {
+        "chinese": "树干是棕色的。",
+        "english": "Tree trunks are brown.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d5"
+        }
+      },
+      {
+        "chinese": "巧克力是棕色的。",
+        "english": "Chocolate is brown.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d6"
+        }
+      },
+      {
+        "chinese": "棕色的眼睛很温暖。",
+        "english": "Brown eyes look warm.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15d8"
+    },
+    "chinese": "头",
+    "pinyin": "tóu",
+    "english": "head",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "我头疼。",
+        "english": "I have a headache.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15d9"
+        }
+      },
+      {
+        "chinese": "他点了点头。",
+        "english": "He nodded his head.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15da"
+        }
+      },
+      {
+        "chinese": "头上戴帽子。",
+        "english": "Wear a hat on your head.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15db"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15dc"
+    },
+    "chinese": "手",
+    "pinyin": "shǒu",
+    "english": "hand",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "请举手。",
+        "english": "Please raise your hand.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15dd"
+        }
+      },
+      {
+        "chinese": "他用手机手写字。",
+        "english": "He writes with his hand.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15de"
+        }
+      },
+      {
+        "chinese": "洗手很重要。",
+        "english": "Washing hands is important.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15df"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15e0"
+    },
+    "chinese": "脚",
+    "pinyin": "jiǎo",
+    "english": "foot",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "我的脚疼。",
+        "english": "My foot hurts.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e1"
+        }
+      },
+      {
+        "chinese": "穿鞋保护脚。",
+        "english": "Wear shoes to protect your feet.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e2"
+        }
+      },
+      {
+        "chinese": "走路用脚。",
+        "english": "We use our feet to walk.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15e4"
+    },
+    "chinese": "眼睛",
+    "pinyin": "yǎnjing",
+    "english": "eye",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "她的眼睛很漂亮。",
+        "english": "Her eyes are beautiful.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e5"
+        }
+      },
+      {
+        "chinese": "用眼睛看东西。",
+        "english": "Use eyes to see things.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e6"
+        }
+      },
+      {
+        "chinese": "保护眼睛很重要。",
+        "english": "Protecting eyes is important.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15e8"
+    },
+    "chinese": "耳朵",
+    "pinyin": "ěrduo",
+    "english": "ear",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "用耳朵听声音。",
+        "english": "Use ears to hear sounds.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15e9"
+        }
+      },
+      {
+        "chinese": "他耳朵很大。",
+        "english": "He has big ears.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ea"
+        }
+      },
+      {
+        "chinese": "小声说话，我耳朵疼。",
+        "english": "Speak softly, my ears hurt.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15eb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15ec"
+    },
+    "chinese": "鼻子",
+    "pinyin": "bízi",
+    "english": "nose",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "用鼻子呼吸。",
+        "english": "Breathe through your nose.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ed"
+        }
+      },
+      {
+        "chinese": "我的鼻子不通。",
+        "english": "My nose is blocked.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ee"
+        }
+      },
+      {
+        "chinese": "鼻子可以闻味道。",
+        "english": "The nose can smell.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ef"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15f0"
+    },
+    "chinese": "嘴",
+    "pinyin": "zuǐ",
+    "english": "mouth",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "用嘴吃饭。",
+        "english": "Eat with your mouth.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f1"
+        }
+      },
+      {
+        "chinese": "请张开嘴。",
+        "english": "Please open your mouth.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f2"
+        }
+      },
+      {
+        "chinese": "闭嘴听讲。",
+        "english": "Close your mouth and listen.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f3"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15f4"
+    },
+    "chinese": "心",
+    "pinyin": "xīn",
+    "english": "heart",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "心跳很快。",
+        "english": "The heartbeat is fast.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f5"
+        }
+      },
+      {
+        "chinese": "我心里很高兴。",
+        "english": "I am happy in my heart.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f6"
+        }
+      },
+      {
+        "chinese": "用心学习。",
+        "english": "Study with your heart.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f7"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15f8"
+    },
+    "chinese": "腿",
+    "pinyin": "tuǐ",
+    "english": "leg",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "我的腿很长。",
+        "english": "My legs are long.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15f9"
+        }
+      },
+      {
+        "chinese": "跑步锻炼腿。",
+        "english": "Running exercises the legs.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15fa"
+        }
+      },
+      {
+        "chinese": "腿受伤了。",
+        "english": "The leg is injured.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15fb"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  },
+  {
+    "_id": {
+      "$oid": "692c35a16009d06d9a6e15fc"
+    },
+    "chinese": "背",
+    "pinyin": "bèi",
+    "english": "back",
+    "category": "BODY",
+    "sentences": [
+      {
+        "chinese": "我背疼。",
+        "english": "My back hurts.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15fd"
+        }
+      },
+      {
+        "chinese": "挺直背坐。",
+        "english": "Sit with a straight back.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15fe"
+        }
+      },
+      {
+        "chinese": "背书包上学。",
+        "english": "Carry a backpack to school.",
+        "_id": {
+          "$oid": "692c35a16009d06d9a6e15ff"
+        }
+      }
+    ],
+    "completedBy": [],
+    "userId": {
+      "$oid": "691a1eb8b0eb3e9422434dcd"
+    },
+    "createdAt": {
+      "$date": "2025-11-30T12:16:33.474Z"
+    },
+    "updatedAt": {
+      "$date": "2025-12-01T11:24:02.382Z"
+    },
+    "__v": 0
+  }
+]

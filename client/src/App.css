@@ -1,0 +1,25 @@
+.connect_hover {
+  display: none;
+}
+
+.hover_class:hover .connect_hover {
+  display: block;
+}
+
+body {
+  overflow-x: hidden;
+}
+.responsive_class{
+  padding: 0px 200px;
+}
+@media(max-width:1000px){
+  .responsive_class{
+    padding: 0px 30px;
+  }
+}
+@media(max-width:768px){
+  .responsive_class{
+   padding: 0px 10px;
+  }
+}
+
