@@ -21,8 +21,7 @@ export default function Category() {
             },
           }
         );
-        // Expect backend to return array like:
-        // [{ category: "FOOD", totalWords: 120, completedWords: 60 }, ...]
+       
         setStats(res.data.categories || []);
       } catch (err) {
         console.error("Category Stats Error:", err);
@@ -36,7 +35,7 @@ export default function Category() {
   }, []);
 
   if (loading) {
-    return <p className="text-white text-center mt-10 text-xl">Loading...</p>;
+    return <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>;
   }
 
   if (stats.length === 0) {

@@ -195,7 +195,7 @@ export default function Progress() {
   };
 
   return (
-    <div className="mt-10 text-[#ffffff] responsive_class">
+    <div className="mt-10 text-gray-400 responsive_class">
       <div className="flex items-center justify-between mb-5">
         <h1 className="text-[15px] md:text-xl hidden md:block">
           📊 Learning Dashboard
@@ -205,7 +205,7 @@ export default function Progress() {
         <div className="w-full md:w-auto">
           <input
             type="date"
-            className="w-full md:w-auto text-[#a49e9e] outline-0 px-2 py-1 rounded border cursor-pointer border-[#154750]"
+            className="w-full md:w-auto text-[#a49e9e] outline-0 px-2 py-1 rounded border cursor-pointer border-[#0a3c43]"
             value={selectedDate}
             onChange={(e) => setSelectedDate(e.target.value)}
           />
@@ -350,7 +350,7 @@ function Card({ title, children }) {
   return (
     <div
       style={{
-        background: "#2c2c2c",
+        background: "rgb(35,53,64)",
         padding: "20px",
         borderRadius: "16px",
         boxShadow: "0 4px 10px rgba(0,0,0,0.3)",

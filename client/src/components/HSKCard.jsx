@@ -11,6 +11,7 @@ export default function HSKCard() {
   const [stats, setStats] = useState([]);
   const token = localStorage.getItem("token");
   const [isShowMessageBox, setShowMessageBox] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   // Fetch HSK summary
   const fetchStats = async () => {
@@ -30,12 +31,17 @@ export default function HSKCard() {
     } catch (err) {
       console.error("Stats Error:", err);
       setStats([]);
+    } finally {
+      setLoading(false);
     }
   };
 
   useEffect(() => {
     if (token) fetchStats();
   }, [token]);
+  if (loading) {
+    return <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>;
+  }
 
   // Reset progress
   const handleResetProgress = async () => {
@@ -105,7 +111,7 @@ export default function HSKCard() {
                   {completedWords > 0 && (
                     <button onClick={() => setShowMessageBox(true)}>
                       <p className="bg-[#a41517] rounded text-center text-gray-200 px-2 py-0.5 cursor-pointer hover:bg-[#cb4447]">
-                        Reset Learning
+                        Reset
                       </p>
                     </button>
                   )}

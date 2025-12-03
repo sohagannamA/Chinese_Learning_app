@@ -59,9 +59,9 @@ export default function AddpracticesWord() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center py-10">
-      <div className="w-full max-w-3xl bg-[#333333] rounded-3xl shadow-xl p-8 space-y-6">
-        <h2 className="text-4xl font-bold text-center text-white mb-4">
+    <div className="min-h-screen responsive_class flex items-center justify-center">
+      <div className="w-full max-w-3xl bg-[rgb(26,41,49)] rounded-3xl shadow-xl px-5 md:px-8 py-8 ">
+        <h2 className="text-2xl font-bold text-center text-gray-400 mb-6">
           Add Practices Word
         </h2>
         <form onSubmit={handleSubmit} className="space-y-5">
@@ -74,7 +74,7 @@ export default function AddpracticesWord() {
               value={formData.chinese}
               onChange={handleChange}
               placeholder="Chinese"
-              className="w-full px-4 py-3 rounded-xl bg-[#373636] text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-blue-500 outline-none transition"
+              className="w-full px-4 py-3 rounded-xl bg-[rgb(35,53,64)] text-white placeholder-gray-400 border border-gray-600  outline-0  transition"
             />
             <input
               type="text"
@@ -83,7 +83,7 @@ export default function AddpracticesWord() {
               value={formData.pinyin}
               onChange={handleChange}
               placeholder="Pinyin"
-              className="w-full px-4 py-3 rounded-xl bg-[#373636] text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-blue-500 outline-none transition"
+              className="w-full px-4 py-3 rounded-xl bg-[rgb(35,53,64)] text-white placeholder-gray-400 border border-gray-600  outline-none transition"
             />
             <input
               type="text"
@@ -92,7 +92,7 @@ export default function AddpracticesWord() {
               value={formData.english}
               onChange={handleChange}
               placeholder="English Meaning"
-              className="w-full px-4 py-3 rounded-xl bg-[#373636] text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-blue-500 outline-none transition"
+              className="w-full px-4 py-3 rounded-xl bg-[rgb(35,53,64)] text-white placeholder-gray-400 border border-gray-600   outline-none transition"
             />
           </div>
 
@@ -110,7 +110,7 @@ export default function AddpracticesWord() {
                   value={sentence.chinese}
                   onChange={(e) => handleSentenceChange(index, e)}
                   placeholder={`Chinese Sentence ${index + 1}`}
-                  className="w-full px-4 py-3 rounded-xl bg-[#373636] text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-green-500 outline-none transition"
+                  className="w-full px-4 py-3 rounded-xl bg-[rgb(35,53,64)] text-white placeholder-gray-400 border border-gray-600  outline-none transition"
                 />
                 <input
                   type="text"
@@ -119,7 +119,7 @@ export default function AddpracticesWord() {
                   value={sentence.english}
                   onChange={(e) => handleSentenceChange(index, e)}
                   placeholder={`English Meaning ${index + 1}`}
-                  className="w-full px-4 py-3 rounded-xl bg-[#373636] text-white placeholder-gray-400 border border-gray-600 focus:ring-2 focus:ring-green-500 outline-none transition"
+                  className="w-full px-4 py-3 rounded-xl bg-[rgb(35,53,64)] text-white placeholder-gray-400 border border-gray-600  outline-none transition"
                 />
               </div>
             ))}
