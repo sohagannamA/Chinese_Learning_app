@@ -40,7 +40,9 @@ export default function HSKCard() {
     if (token) fetchStats();
   }, [token]);
   if (loading) {
-    return <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>;
+    return (
+      <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>
+    );
   }
 
   // Reset progress
@@ -80,62 +82,66 @@ export default function HSKCard() {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
-      {isShowMessageBox && <MessageBox resetObject={resetObject} />}
+    <div className="set_width responsive_class mb-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-3">
+        {isShowMessageBox && <MessageBox resetObject={resetObject} />}
 
-      {stats.map((item) => {
-        const { hskLevel, totalWords, completedWords } = item;
-        const percent =
-          totalWords > 0 ? Math.round((completedWords / totalWords) * 100) : 0;
+        {stats.map((item) => {
+          const { hskLevel, totalWords, completedWords } = item;
+          const percent =
+            totalWords > 0
+              ? Math.round((completedWords / totalWords) * 100)
+              : 0;
 
-        return (
-          <div
-            key={hskLevel}
-            className="rounded px-8 py-6 bg-[rgb(26,41,49)] hover:bg-[rgb(35,53,64)]"
-          >
-            <div className="flex items-center justify-between">
-              <div className="space-y-2">
-                <h1 className="text-gray-300 text-xl">{hskLevel}</h1>
-                <p className="text-gray-300">TOTAL : {totalWords}</p>
-                <p className="text-gray-300">COMPLETED : {completedWords}</p>
+          return (
+            <div
+              key={hskLevel}
+              className="rounded px-8 py-6 bg-[rgb(26,41,49)] hover:bg-[rgb(35,53,64)]"
+            >
+              <div className="flex items-center justify-between">
+                <div className="space-y-2">
+                  <h1 className="text-gray-300 text-xl">{hskLevel}</h1>
+                  <p className="text-gray-300">TOTAL : {totalWords}</p>
+                  <p className="text-gray-300">COMPLETED : {completedWords}</p>
 
-                <div className="flex items-center space-x-4">
-                  {/* Learn Button */}
-                  <NavLink to={`/${hskLevel}`} state={{ words: stats }}>
-                    <p className="bg-green-800 rounded text-center text-gray-200 px-2 py-0.5 cursor-pointer hover:bg-green-900">
-                      Learn
-                    </p>
-                  </NavLink>
-
-                  {/* Reset Button: only show if some words completed */}
-                  {completedWords > 0 && (
-                    <button onClick={() => setShowMessageBox(true)}>
-                      <p className="bg-[#a41517] rounded text-center text-gray-200 px-2 py-0.5 cursor-pointer hover:bg-[#cb4447]">
-                        Reset
+                  <div className="flex items-center space-x-4">
+                    {/* Learn Button */}
+                    <NavLink to={`/${hskLevel}`} state={{ words: stats }}>
+                      <p className="bg-green-800 rounded text-center text-gray-200 px-2 py-0.5 cursor-pointer hover:bg-green-900">
+                        Learn
                       </p>
-                    </button>
-                  )}
+                    </NavLink>
+
+                    {/* Reset Button: only show if some words completed */}
+                    {completedWords > 0 && (
+                      <button onClick={() => setShowMessageBox(true)}>
+                        <p className="bg-[#a41517] rounded text-center text-gray-200 px-2 py-0.5 cursor-pointer hover:bg-[#cb4447]">
+                          Reset
+                        </p>
+                      </button>
+                    )}
+                  </div>
+                </div>
+
+                {/* Progress Circle */}
+                <div style={{ width: 100, height: 100 }}>
+                  <CircularProgressbar
+                    value={percent}
+                    text={`${percent}%`}
+                    strokeWidth={10}
+                    styles={buildStyles({
+                      pathColor: "#3b82f6",
+                      trailColor: "#e5e7eb",
+                      textColor: "#3b82f6",
+                      textSize: "20px",
+                    })}
+                  />
                 </div>
               </div>
-
-              {/* Progress Circle */}
-              <div style={{ width: 100, height: 100 }}>
-                <CircularProgressbar
-                  value={percent}
-                  text={`${percent}%`}
-                  strokeWidth={10}
-                  styles={buildStyles({
-                    pathColor: "#3b82f6",
-                    trailColor: "#e5e7eb",
-                    textColor: "#3b82f6",
-                    textSize: "20px",
-                  })}
-                />
-              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </div>
     </div>
   );
 }

@@ -4,6 +4,7 @@ import DisplayWord from "./DisplayWord";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { Host } from "../api/Host";
+import { useLocation } from "react-router-dom";
 
 export default function HSKSection() {
   const [wordDisplay, setWordDisplay] = useState(false);
@@ -17,13 +18,18 @@ export default function HSKSection() {
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
 
+  const pathWithoutSlash = location.pathname.startsWith("/")
+    ? location.pathname.substring(1)
+    : location.pathname;
+
   const fetchWords = async () => {
     try {
-      const res = await axios.get(`${Host.host}api/words/getword`, {
+      const res = await axios.get(`${Host.host}api/words/getword/${pathWithoutSlash}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
 
       const words = res.data.words || [];
+
 
       if (!words.length) {
         setCategories([]);
@@ -75,8 +81,6 @@ export default function HSKSection() {
       console.error("Fetch words error:", err);
     }
   };
-
-  
 
   useEffect(() => {
     if (token) fetchWords();
@@ -215,7 +219,7 @@ export default function HSKSection() {
     totalWords > 0 ? Math.round((totalCompleted / totalWords) * 100) : 0;
 
   return (
-    <div className="my-6 responsive_class">
+    <div className="my-3 responsive_class set_width mb-20">
       {wordDisplay && (
         <div className="bg-[#1f1e1e] fixed top-0 left-0 h-screen w-full z-50">
           <DisplayWord

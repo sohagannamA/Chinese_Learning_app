@@ -10,6 +10,8 @@ import axios from "axios";
 import { PiPlayFill } from "react-icons/pi";
 import { IoMdPause } from "react-icons/io";
 import { Host } from "../api/Host";
+import { IoMdAdd } from "react-icons/io";
+import { IoCheckmarkSharp } from "react-icons/io5";
 
 // Shuffle function
 const shuffleArray = (arr) => {
@@ -26,6 +28,7 @@ export default function DisplayWord({
   setWordDisplay,
   words,
   fetchWords,
+  fetchTotalWords,
   from,
 }) {
   const [index, setIndex] = useState(0);
@@ -75,7 +78,6 @@ export default function DisplayWord({
           Authorization: `Bearer ${token}`,
         },
       });
-      console.log(res.data);
 
       setCompleted({
         action: res.data.isCompleted,
@@ -303,6 +305,63 @@ export default function DisplayWord({
 
   const [ispromodoro, setpromodoro] = useState(false);
 
+  // Saved status per word
+  const [savedWords, setSavedWords] = useState({});
+
+  // Toggle / add/remove word
+  const addToPracticesWord = async (word) => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) return alert("Please login first");
+
+      const response = await axios.post(
+        `${Host.host}api/words/addPracticesWord`,
+        word,
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      console.log(word);
+
+      // Update saved status for this word only
+      setSavedWords((prev) => ({
+        ...prev,
+        [word._id]: response.data.toggled === "added",
+      }));
+    } catch (error) {
+      console.error(error);
+      alert(error.response?.data?.message || "Failed to toggle word");
+    }
+  };
+
+  const checkWordStatus = async (word) => {
+    try {
+      const token = localStorage.getItem("token");
+      if (!token) return;
+
+      const res = await axios.get(`${Host.host}api/words/check`, {
+        params: { chinese: word.chinese }, // send chinese word
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      // save status using word._id as key
+      setSavedWords((prev) => ({
+        ...prev,
+        [word._id]: res.data.exists,
+      }));
+    } catch (err) {
+      console.log("Check error:", err);
+    }
+  };
+
+  // Run check whenever current word changes
+  useEffect(() => {
+    if (current) {
+      checkWordStatus(current); // pass whole word
+      console.log("Check triggered for:", current.chinese);
+    }
+  }, [current.chinese]); // dependency is chinese
+
   return (
     <div className="mx-auto w-full   bg-[#333333] overflow-y-scroll  h-screen relative">
       <div className="flex border-b-2 border-[#414040] bg-[rgb(51,51,51)] sticky top-0 z-50  items-center justify-between px-3 md:px-10 pt-3 pb-3">
@@ -312,7 +371,12 @@ export default function DisplayWord({
             onClick={() => {
               setWordDisplay(!wordDisplay);
               document.body.style.overflowY = "auto";
-              from !== "searchPart" ? fetchWords() : "";
+              if (from === "hskPart") {
+                fetchWords();
+              }
+              if (from === "practices_word") {
+                fetchTotalWords();
+              }
             }}
             className="h-[35px] w-[35px] bg-[#414141] cursor-pointer hover:bg-[#585757] rounded-2xl flex items-center justify-center"
           >
@@ -409,7 +473,7 @@ export default function DisplayWord({
             <p className="text-center mb-5 mt-3 text-xl text-gray-400">
               {index + 1}/{shuffledWords.length}
             </p>
-            <div className="flex items-center justify-center bg-[#3b3a3a] mx-4 md:mx-10 rounded-full py-1">
+            <div className="flex items-center justify-center bg-[#3b3a3a] mx-0 md:mx-10 rounded-full py-1">
               <div className="flex items-center justify-between w-full px-10">
                 {/* PREVIOUS */}
                 <div
@@ -417,9 +481,6 @@ export default function DisplayWord({
                   className="hover_class relative text-[20px] h-[35px] text-gray-400 w-[35px] flex items-center justify-center border border-[#4d4c4c] rounded-full cursor-pointer hover:bg-[#4d4c4c]"
                 >
                   <FaArrowLeft />
-                  {/* <div className="connect_hover absolute bottom-[-100%] w-[70px] text-center   bg-[#121212] text-[12px] p-0.5 rounded">
-                    Previous
-                  </div> */}
                 </div>
 
                 <div className="flex items-center space-x-3">
@@ -430,9 +491,6 @@ export default function DisplayWord({
                     } text-gray-400 cursor-pointer hover:bg-[#4d4c4c] rounded`}
                   >
                     <BiShow />
-                    {/* <div className="connect_hover absolute bottom-[-100%] w-[80px] text-center     bg-[#121212] text-[12px] p-0.5 rounded">
-                      Show Pinyin
-                    </div> */}
                   </div>
 
                   <div
@@ -440,9 +498,6 @@ export default function DisplayWord({
                     className="hover_class relative h-[35px] w-[35px] border border-[#4d4c4c] flex items-center justify-center text-[20px] text-gray-400 cursor-pointer hover:bg-[#4d4c4c] rounded"
                   >
                     <GiSpeaker />
-                    {/* <div className="connect_hover absolute bottom-[-100%] w-[50px] text-center     bg-[#121212] text-[12px] p-0.5 rounded">
-                      Listen
-                    </div> */}
                   </div>
 
                   {from !== "practices_word" ? (
@@ -453,14 +508,14 @@ export default function DisplayWord({
                       {completed.action && completed.wordId === current._id ? (
                         <div>
                           <FaRegCheckSquare />
-                          <div className="connect_hover left-0 absolute bottom-[-100%] w-[145px] text-center bg-[#121212] text-[12px] p-0.5 rounded">
+                          <div className="connect_hover left-[-100%]   absolute bottom-[-100%] w-[145px] text-center bg-[#121212] text-[12px] p-0.5 rounded">
                             Remove from Completed
                           </div>
                         </div>
                       ) : (
                         <div>
                           <MdCheckBoxOutlineBlank />
-                          <div className="connect_hover absolute bottom-[-100%] w-[120px] text-center bg-[#121212] text-[12px] p-0.5 rounded">
+                          <div className="connect_hover left-[-100%] absolute bottom-[-100%] w-[120px] text-center bg-[#121212] text-[12px] p-0.5 rounded">
                             Add to Completed
                           </div>
                         </div>
@@ -469,6 +524,22 @@ export default function DisplayWord({
                   ) : (
                     ""
                   )}
+                  <div
+                    onClick={() => addToPracticesWord(current)}
+                    className="hover_class relative h-[35px] w-[35px] border border-[#4d4c4c] flex items-center justify-center text-[20px] text-gray-400 cursor-pointer hover:bg-[#4d4c4c] rounded"
+                  >
+                    <div className="connect_hover left-[-100%] absolute bottom-[-100%] w-[110px] text-center bg-[#121212] text-[12px] p-0.5 rounded">
+                      {savedWords[current._id]
+                        ? "Remove Practices"
+                        : "Practices next time"}
+                    </div>
+
+                    {savedWords[current._id] ? (
+                      <IoCheckmarkSharp />
+                    ) : (
+                      <IoMdAdd />
+                    )}
+                  </div>
                 </div>
 
                 {/* NEXT */}

@@ -9,17 +9,33 @@
 body {
   overflow-x: hidden;
 }
-.responsive_class{
-  padding: 0px 200px;
-}
-@media(max-width:1000px){
-  .responsive_class{
-    padding: 0px 30px;
-  }
-}
-@media(max-width:768px){
-  .responsive_class{
-   padding: 0px 10px;
-  }
+
+.responsive_class {
+  padding: 0px 50px;
 }
 
+.set_width {
+  margin-left: 20%;
+}
+
+.set_leftnav {
+  left: 0;
+}
+
+.activ_nave .active .active_color {
+  color: rgb(177, 96, 218)
+}
+
+.active_nav_bg .active .active_color {
+  background-color: rgb(28, 49, 63);
+}
+
+@media(max-width:1000px) {
+  .set_width {
+    margin-left: 0;
+  }
+
+  .responsive_class {
+    padding: 0 20px;
+  }
+}

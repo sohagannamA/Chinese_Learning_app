@@ -47,26 +47,33 @@ export const addWord = async (req, res) => {
 
 export const getWordsByUser = async (req, res) => {
   try {
-    const words = await Word.find();
+    const { level } = req.params; // URL query থেকে hskLevel নেয়া
+   
 
-    // If no words found
+    let query = {};
+
+    if (level) {
+      query.hskLevel = level; // ফিল্টার যোগ
+    }
+
+    const words = await Word.find(query);
+
     if (!words || words.length === 0) {
       return res.status(200).json({
         success: false,
-        message: "No words found for this user",
+        message: "No words found",
         words: [],
       });
     }
 
-    // If words found
-    res.status(200).json({
+    return res.status(200).json({
       success: true,
       count: words.length,
       words,
     });
   } catch (error) {
     console.error("Get Words Error:", error);
-    res.status(500).json({ message: "Server error" });
+    return res.status(500).json({ message: "Server error" });
   }
 };
 

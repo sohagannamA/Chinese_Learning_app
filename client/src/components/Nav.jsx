@@ -9,6 +9,7 @@ import { IoClose } from "react-icons/io5";
 import axios from "axios";
 import DisplayWord from "./DisplayWord";
 import { GiProgression } from "react-icons/gi";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { Host } from "../api/Host";
 
 export default function Nav() {
@@ -143,59 +144,29 @@ export default function Nav() {
         )}
         <div className="flex items-center justify-between">
           <NavLink to="/">
-            <div className="text-[20px] text-yellow-300 rounded-full">
+            <div className="text-[20px]  text-yellow-300 rounded-full">
               Hanyuzen🌟
             </div>
           </NavLink>
           <div className="flex items-center justify-between space-x-3">
             <div
               onClick={() => setSearchShow(!searchShow)}
-              className="h-[35px] w-[35px] border-2 border-[#4f4d4d] hover:border-[#686868] rounded-full cursor-pointer flex items-center justify-center"
+              className="  h-[35px] w-[35px] border-2 border-[#4f4d4d] hover:border-[#686868] rounded-full cursor-pointer flex items-center justify-center"
             >
               <MdSearch className="text-[#bebbbb] text-[20px]" />
             </div>
-            <div ref={dropdownRef} className="relative">
-              <div
-                onClick={() => setAddAction(!addAction)}
-                className=" h-[35px] w-[35px] border-2 border-[#4f4d4d] rounded-full hover:border-[#686868] cursor-pointer flex items-center justify-center"
-              >
-                <MdAdd className="text-[#bebbbb] text-[24px]" />
-              </div>
-              {addAction ? (
-                <div className="absolute  mt-2 right-0  rounded px-2.5 py-2.5 top-full w-[150px] bg-gray-700">
-                  {/* <NavLink
-                    onClick={() => setAddAction(!addAction)}
-                    to="/addword"
-                  >
-                    <div className="text-gray-300 border-1 right-0 border-[#5b5a5a] text-center rounded text-[15px] py-1 hover:bg-[#5b5a5a] ">
-                      New Word
-                    </div>
-                  </NavLink> */}
-                  <NavLink
-                    onClick={() => setAddAction(!addAction)}
-                    to="/practices_word"
-                  >
-                    <div className="text-gray-300  border-1 border-[#5b5a5a] text-center rounded text-[15px] py-1 hover:bg-[#5b5a5a] ">
-                      Practices Word
-                    </div>
-                  </NavLink>
-                </div>
-              ) : (
-                ""
-              )}
-            </div>
             <NavLink to="/progress">
-              <div className="h-[35px] w-[35px] border-2 border-[#4f4d4d] rounded-full hover:border-[#686868] cursor-pointer flex items-center justify-center">
+              <div className="  h-[35px] w-[35px] border-2 border-[#4f4d4d] rounded-full hover:border-[#686868] cursor-pointer flex items-center justify-center">
                 <GiProgression className="text-[#bebbbb] text-[15px]" />
               </div>
             </NavLink>
-
             <div
               onClick={() => handleLogout()}
-              className="h-[35px] w-[35px] border-2 border-[#4f4d4d] rounded-full hover:border-[#686868] cursor-pointer flex items-center justify-center"
+              className=" h-[35px] w-[35px] border-2 border-[#4f4d4d] rounded-full hover:border-[#686868] cursor-pointer flex items-center justify-center"
             >
               <MdOutlineLogout className="text-[#bebbbb] text-[20px]" />
             </div>
+          
           </div>
         </div>
       </div>

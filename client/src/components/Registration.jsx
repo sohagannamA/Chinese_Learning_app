@@ -36,7 +36,7 @@ export default function Registration() {
         `${Host.host}api/auth/register`,
         formData
       );
-
+      console.log(response.data)
       alert(response.data.message);
 
       // Optionally, redirect to login page after registration

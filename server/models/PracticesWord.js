@@ -16,7 +16,7 @@ const wordSchema = new mongoose.Schema(
       type: [sentenceSchema],
       validate: {
         validator: function (arr) {
-          return arr.length === 2;
+          return arr.length === 3;
         },
         message: "Exactly two example sentences are required",
       },
@@ -32,5 +32,4 @@ const wordSchema = new mongoose.Schema(
   },
   { timestamps: true }
 );
-
 export default mongoose.model("PracticesWord", wordSchema);

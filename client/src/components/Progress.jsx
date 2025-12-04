@@ -195,7 +195,7 @@ export default function Progress() {
   };
 
   return (
-    <div className="mt-10 text-gray-400 responsive_class">
+    <div className="mt-4 text-gray-400 set_width responsive_class">
       <div className="flex items-center justify-between mb-5">
         <h1 className="text-[15px] md:text-xl hidden md:block">
           📊 Learning Dashboard
