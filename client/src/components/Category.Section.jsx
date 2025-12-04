@@ -91,8 +91,11 @@ export default function CategorySection() {
       ? Math.round((totalCategoryCompleted / totalCategoryWords) * 100)
       : 0;
 
+  const allWords = parts.flat(); // merge all part words into one list
+
+  const list = [allWords, ...parts];
   return (
-    <div className="my-10 responsive_class">
+    <div className="my-3 set_width responsive_class mb-20">
       {wordDisplay && (
         <div className="bg-[#1f1e1e] fixed top-0 left-0 h-screen w-full z-50">
           <DisplayWord
@@ -120,64 +123,32 @@ export default function CategorySection() {
       </div>
 
       {/* ===== CATEGORY PARTS COLUMNS ===== */}
-      <div className="flex items-start justify-between space-x-2">
-        {/* LEFT COLUMN */}
-        <section className="w-[50%] space-y-2">
-          {parts
-            .filter((_, i) => i % 2 === 0)
-            .map((partWords, index) => {
-              const partNumber = index * 2 + 1;
-              const completed = getCompleted(partWords);
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
+        {list.map((partWords, index) => {
+          const completed = getCompleted(partWords);
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => openPart(partWords)}
-                  className={`${
-                    completed === partWords.length
-                      ? "bg-[#06742d]"
-                      : "bg-[rgb(26,41,49)]"
-                  } px-5 py-2 rounded flex items-center cursor-pointer hover:bg-[rgb(35,53,64)] justify-between`}
-                >
-                  <p className="text-[17px] text-gray-200">PART-{partNumber}</p>
-                  <div className="flex items-center gap-3">
-                    <p className="bg-gray-600 px-3 py-1 text-gray-300 rounded-2xl">
-                      {completed}/{partWords.length}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-        </section>
+          const label = index === 0 ? "All Word" : `PART-${index}`; // Part numbering starts at 1
 
-        {/* RIGHT COLUMN */}
-        <section className="w-[50%] space-y-2">
-          {parts
-            .filter((_, i) => i % 2 === 1)
-            .map((partWords, index) => {
-              const partNumber = index * 2 + 2;
-              const completed = getCompleted(partWords);
+          return (
+            <div
+              key={index}
+              onClick={() => openPart(partWords)}
+              className={`${
+                completed === partWords.length
+                  ? "bg-[#06742d]"
+                  : "bg-[rgb(26,41,49)]"
+              } px-5 py-2 rounded flex items-center cursor-pointer hover:bg-[rgb(35,53,64)] justify-between`}
+            >
+              <p className="text-[17px] text-gray-200">{label}</p>
 
-              return (
-                <div
-                  key={index}
-                  onClick={() => openPart(partWords)}
-                  className={`${
-                    completed === partWords.length
-                      ? "bg-[#06742d]"
-                      : "bg-[#333333]"
-                  } px-5 py-2 rounded flex items-center cursor-pointer hover:bg-[#131313] justify-between`}
-                >
-                  <p className="text-[17px] text-gray-200">PART-{partNumber}</p>
-                  <div className="flex items-center gap-3">
-                    <p className="bg-gray-600 px-3 py-1 text-gray-300 rounded-2xl">
-                      {completed}/{partWords.length}
-                    </p>
-                  </div>
-                </div>
-              );
-            })}
-        </section>
+              <div className="flex items-center gap-3">
+                <p className="bg-gray-600 px-3 py-1 text-gray-300 rounded-2xl">
+                  {completed}/{partWords.length}
+                </p>
+              </div>
+            </div>
+          );
+        })}
       </div>
     </div>
   );

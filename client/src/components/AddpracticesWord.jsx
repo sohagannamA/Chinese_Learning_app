@@ -59,8 +59,8 @@ export default function AddpracticesWord() {
   };
 
   return (
-    <div className="min-h-screen responsive_class flex items-center justify-center">
-      <div className="w-full max-w-3xl bg-[rgb(26,41,49)] rounded-3xl shadow-xl px-5 md:px-8 py-8 ">
+    <div className="h-[70vh] set_width responsive_class flex items-center justify-center">
+      <div className="w-full  bg-[rgb(26,41,49)] rounded-3xl shadow-xl px-5 md:px-8 py-8 ">
         <h2 className="text-2xl font-bold text-center text-gray-400 mb-6">
           Add Practices Word
         </h2>

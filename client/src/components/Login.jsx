@@ -29,7 +29,7 @@ export default function Login() {
         `${Host.host}api/auth/login`,
         formData
       );
-      console.log(data)
+     
 
       if (data?.user?._id && data?.token) {
         // Save userId and token in localStorage

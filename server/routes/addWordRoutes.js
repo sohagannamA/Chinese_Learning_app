@@ -19,6 +19,7 @@ import {
   resetLearningProgress,
 } from "../controllers/getHskSummary.js";
 import {
+  checkPracticesWord,
   deleteAllPracticeWords,
   getTotalPracticeWords,
   PracticesWord,
@@ -28,7 +29,7 @@ const router = express.Router();
 
 router.post("/add", authMiddleware, addWord);
 router.get("/hsk-summary", authMiddleware, getHskSummary);
-router.get("/getword", authMiddleware, getWordsByUser);
+router.get("/getword/:level", authMiddleware, getWordsByUser);
 router.get("/getall", authMiddleware, getAllWord);
 
 router.put("/reset-progress", authMiddleware, resetLearningProgress);
@@ -53,6 +54,7 @@ router.get(
 
 router.post("/addPracticesWord", authMiddleware, PracticesWord);
 router.get("/total", authMiddleware, getTotalPracticeWords);
+router.get("/check",authMiddleware,checkPracticesWord)
 router.delete(
   "/deleteAllPracticeWords",
   authMiddleware,

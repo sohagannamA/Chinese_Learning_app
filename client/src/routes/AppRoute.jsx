@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
-import Home from "../components/Home";
 import Nav from "../components/Nav";
 import HSKSection from "../components/HSK.Section";
 import Login from "../components/Login";
@@ -10,6 +9,11 @@ import AddWord from "../components/AddWord";
 import CategorySection from "../components/Category.Section";
 import AddpracticesWord from "../components/AddpracticesWord";
 import Profile from "../components/Progress";
+import LeftNav from "../components/LeftNav";
+import HSKCard from "../components/HSKCard";
+import Category from "../components/Category";
+import PracticesCard from "../components/PracticesCard";
+import Syllable from "../components/Syllable";
 
 // Wrapper to conditionally show Navbar
 function Layout({ children }) {
@@ -26,6 +30,7 @@ function Layout({ children }) {
   return (
     <div>
       {!showNav && <Nav />}
+      {!showNav && <LeftNav />}
       {children}
     </div>
   );
@@ -38,14 +43,13 @@ export default function AppRoute() {
         {/* Public Routes */}
         <Route path="/login" element={<Login />} />
         <Route path="/registration" element={<Registration />} />
-
         {/* Protected Routes */}
         <Route
           path="/"
           element={
             <PrivateRoute>
               <Layout>
-                <Home />
+                <HSKCard />
               </Layout>
             </PrivateRoute>
           }
@@ -90,7 +94,6 @@ export default function AppRoute() {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/addword"
           element={
@@ -101,7 +104,6 @@ export default function AppRoute() {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/practices_word"
           element={
@@ -112,7 +114,6 @@ export default function AppRoute() {
             </PrivateRoute>
           }
         />
-
         <Route
           path="/category/:name"
           element={
@@ -123,13 +124,42 @@ export default function AppRoute() {
             </PrivateRoute>
           }
         />
-
+        <Route
+          path="/category"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <Category />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
         <Route
           path="/progress"
           element={
             <PrivateRoute>
               <Layout>
                 <Profile />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/practices_card"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <PracticesCard />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/syllable"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <Syllable />
               </Layout>
             </PrivateRoute>
           }
