@@ -102,18 +102,17 @@ export default function DisplayWord({
       setShuffledWords(shuffled);
       setIndex(0);
     }
-    setShowEnglish(false);
+ 
   };
 
   const prevWord = () => {
     if (index === 0) {
       const shuffled = shuffleArray(shuffledWords);
       setShuffledWords(shuffled);
-      setIndex(shuffledWords.length - 1);
     } else {
       setIndex(index - 1);
     }
-    setShowEnglish(false);
+    
   };
 
   // HanziWriter animation

@@ -4,6 +4,7 @@ import { RiHome5Line } from "react-icons/ri";
 import { FaLanguage } from "react-icons/fa6";
 import { BiCategory, BiDumbbell } from "react-icons/bi";
 import PhoneNav from "./PhoneNav";
+import { RiSpeakAiLine } from "react-icons/ri";
 
 export default function LeftNav() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -37,6 +38,13 @@ export default function LeftNav() {
             <div className="active_color flex items-center hover:bg-[rgb(28,49,63)] px-[50px] py-[10px] mb-[20px] space-x-4">
               <BiCategory className="text-[25px] text-gray-400" />
               <p className="text-[17px] text-gray-400">Category</p>
+            </div>
+          </NavLink>
+
+          <NavLink to="/speaking">
+            <div className="active_color flex items-center hover:bg-[rgb(28,49,63)] px-[50px] py-[10px] mb-[20px] space-x-4">
+              <RiSpeakAiLine className="text-[25px] text-gray-400" />
+              <p className="text-[17px] text-gray-400">Speak</p>
             </div>
           </NavLink>
 

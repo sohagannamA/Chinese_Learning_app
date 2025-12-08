@@ -8,7 +8,10 @@ export default function CategorySection() {
   const location = useLocation();
   const [wordDisplay, setWordDisplay] = useState(false);
   const [selectedPartWords, setSelectedPartWords] = useState([]);
-  const [parts, setParts] = useState([]);
+
+  const [parts, setParts] = useState([]); // only PART-1, PART-2...
+  const [allWords, setAllWords] = useState([]); // ALL WORD list
+
   const [categoryName, setCategoryName] = useState("");
   const [totalCategoryWords, setTotalCategoryWords] = useState(0);
   const [totalCategoryCompleted, setTotalCategoryCompleted] = useState(0);
@@ -30,31 +33,32 @@ export default function CategorySection() {
 
       if (!words.length) {
         setParts([]);
+        setAllWords([]);
         setTotalCategoryWords(0);
         setTotalCategoryCompleted(0);
         return;
       }
 
-      // Mark completion per user
+      // Add completion status
       const wordsWithCompletion = words.map((w) => ({
         ...w,
         isCompleted: w.completedBy?.some((id) => id.toString() === userId),
       }));
 
+      // Save ALL WORD list
+      setAllWords(wordsWithCompletion);
+
+      // Split into parts of 5
       const PART_SIZE = 5;
-      const allParts = [];
+      const generatedParts = [];
 
-      // ALL words as first part
-      allParts.push(wordsWithCompletion);
-
-      // Split into chunks
       for (let i = 0; i < wordsWithCompletion.length; i += PART_SIZE) {
-        allParts.push(wordsWithCompletion.slice(i, i + PART_SIZE));
+        generatedParts.push(wordsWithCompletion.slice(i, i + PART_SIZE));
       }
 
-      setParts(allParts);
+      setParts(generatedParts);
 
-      // Set counts
+      // Save count
       setTotalCategoryWords(wordsWithCompletion.length);
       setTotalCategoryCompleted(
         wordsWithCompletion.filter((w) => w.isCompleted).length
@@ -62,15 +66,17 @@ export default function CategorySection() {
     } catch (err) {
       console.error("Category fetch error:", err);
       setParts([]);
+      setAllWords([]);
       setTotalCategoryWords(0);
       setTotalCategoryCompleted(0);
     }
   };
 
+  // Load category
   useEffect(() => {
-    // Get category name from path
     const pathParts = location.pathname.split("/");
     const categoryFromPath = pathParts[pathParts.length - 1];
+
     if (categoryFromPath) {
       setCategoryName(categoryFromPath.toUpperCase());
       fetchCategoryWords(categoryFromPath);
@@ -91,9 +97,9 @@ export default function CategorySection() {
       ? Math.round((totalCategoryCompleted / totalCategoryWords) * 100)
       : 0;
 
-  const allWords = parts.flat(); // merge all part words into one list
-
+  // Final List = ALL WORD + PARTS
   const list = [allWords, ...parts];
+
   return (
     <div className="my-3 set_width responsive_class mb-20">
       {wordDisplay && (
@@ -126,8 +132,7 @@ export default function CategorySection() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
         {list.map((partWords, index) => {
           const completed = getCompleted(partWords);
-
-          const label = index === 0 ? "All Word" : `PART-${index}`; // Part numbering starts at 1
+          const label = index === 0 ? "All Word" : `PART-${index}`;
 
           return (
             <div

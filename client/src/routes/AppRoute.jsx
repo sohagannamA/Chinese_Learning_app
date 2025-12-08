@@ -14,6 +14,9 @@ import HSKCard from "../components/HSKCard";
 import Category from "../components/Category";
 import PracticesCard from "../components/PracticesCard";
 import Syllable from "../components/Syllable";
+import SpeakingCard from "../components/SpeakingCard";
+import SpeakingSection from "../components/SpeakingSection";
+import DisplaySpeaking from "../components/DisplaySpeaking";
 
 // Wrapper to conditionally show Navbar
 function Layout({ children }) {
@@ -160,6 +163,37 @@ export default function AppRoute() {
             <PrivateRoute>
               <Layout>
                 <Syllable />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/speaking"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <SpeakingCard />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
+
+        <Route
+          path="/speakingsection/:hsklevel"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <SpeakingSection />
+              </Layout>
+            </PrivateRoute>
+          }
+        />
+        <Route
+          path="/speakingdisplay/:id"
+          element={
+            <PrivateRoute>
+              <Layout>
+                <DisplaySpeaking />
               </Layout>
             </PrivateRoute>
           }

@@ -121,8 +121,8 @@ export default function Syllable() {
                 }`}
                 onClick={() => speakText(pinyin, "tone")}
               >
-                <div className="py-2 rounded text-gray-400 text-xl text-center space-y-2">
-                  <p className="text-[30px]">{pinyin}</p>
+                <div className="py-2 rounded text-gray-400  text-center space-y-2">
+                  <p className=" text-[20px] md:text-[25px]">{pinyin}</p>
                   <p>{char}</p>
                   <p>{meaning}</p>
                 </div>

@@ -39,3 +39,7 @@ body {
     padding: 0 20px;
   }
 }
+
+.set_fontfamily{
+  font-family: monospace;
+}
