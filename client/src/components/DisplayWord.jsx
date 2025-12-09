@@ -95,31 +95,32 @@ export default function DisplayWord({
 
   // Next and previous word navigation
   const nextWord = () => {
-    if (index < shuffledWords.length - 1) {
-      setIndex(index + 1);
-    } else {
-      const shuffled = shuffleArray(shuffledWords);
-      setShuffledWords(shuffled);
-      setIndex(0);
-    }
- 
+    setIndex((prev) => {
+      if (prev < shuffledWords.length - 1) {
+        return prev + 1;
+      } else {
+        const shuffled = shuffleArray(shuffledWords);
+        setShuffledWords(shuffled);
+        return 0;
+      }
+    });
   };
 
   const prevWord = () => {
-    if (index === 0) {
-      const shuffled = shuffleArray(shuffledWords);
-      setShuffledWords(shuffled);
-    } else {
-      setIndex(index - 1);
-    }
-    
+    setIndex((prev) => {
+      if (prev === 0) {
+        const shuffled = shuffleArray(shuffledWords);
+        setShuffledWords(shuffled);
+        return shuffled.length - 1; // শেষ শব্দে ফিরে যান
+      } else {
+        return prev - 1;
+      }
+    });
   };
 
   // HanziWriter animation
   const writerRef = useRef(null);
   const isAnimatingRef = useRef(false);
-
-  // Effect to handle activeWordWrite change
 
   const animationFunction = () => {
     if (!container.current || !activeWordWrite) return;
@@ -353,16 +354,34 @@ export default function DisplayWord({
     }
   };
 
+  const [isAutoChange, setAutoChange] = useState(false);
+  const [delay, setDelay] = useState(5);
+
   // Run check whenever current word changes
   useEffect(() => {
     if (current) {
       checkWordStatus(current); // pass whole word
-      console.log("Check triggered for:", current.chinese);
     }
   }, [current.chinese]); // dependency is chinese
 
+  useEffect(() => {
+    if (!isAutoChange) return;
+
+    const timer = setInterval(() => {
+      nextWord();
+    }, delay * 1000);
+
+    return () => clearInterval(timer);
+  }, [isAutoChange, delay, current.chinese]);
+
+  useEffect(() => {
+    if (isAutoChange) {
+      speakChinese(current.chinese);
+    }
+  }, [current]);
+
   return (
-    <div className="mx-auto w-full   bg-[#333333] overflow-y-scroll  h-screen relative">
+    <div className="mx-auto w-full set_zindex  bg-[#333333] overflow-y-scroll  h-screen relative">
       <div className="flex border-b-2 border-[#414040] bg-[rgb(51,51,51)] sticky top-0 z-50  items-center justify-between px-3 md:px-10 pt-3 pb-3">
         {/* POMODORO TIMER UI */}
         <div className="flex items-center justify-between space-x-3 w-full ">
@@ -375,6 +394,9 @@ export default function DisplayWord({
               }
               if (from === "practices_word") {
                 fetchTotalWords();
+              }
+              if (from === "category") {
+                fetchWords();
               }
             }}
             className="h-[35px] w-[35px] bg-[#414141] cursor-pointer hover:bg-[#585757] rounded-2xl flex items-center justify-center"
@@ -438,6 +460,15 @@ export default function DisplayWord({
                   } cursor-pointer text-center text-[12px] mb-2 hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
                 >
                   Pomodoro
+                </div>
+
+                <div
+                  onClick={() => setAutoChange(!isAutoChange)}
+                  className={`${
+                    isAutoChange ? "bg-[#242424]" : "bg-[#393737]"
+                  } cursor-pointer text-center text-[12px] mb-2 hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
+                >
+                  Auto Change
                 </div>
               </div>
             ) : (

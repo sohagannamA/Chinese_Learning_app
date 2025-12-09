@@ -76,6 +76,8 @@ export default function Nav() {
             data.english.toLowerCase() === key // exact match for English
         )
       );
+      
+      
 
       // Remove duplicates based on English word
       const uniqueSearchData = Array.from(
@@ -89,6 +91,7 @@ export default function Nav() {
       } else {
         setSearchData(uniqueSearchData);
         setWordDisplay(!wordDisplay);
+        document.body.style.overflowY = "hidden";
       }
     } catch (error) {
       console.error("Error fetching words:", error);
@@ -98,7 +101,7 @@ export default function Nav() {
   return (
     <div className="sticky bg-[rgb(19,31,36)] responsive_class  top-0">
       {wordDisplay && (
-        <div className="bg-[#1f1e1e] fixed top-0 left-0 h-screen w-full z-50">
+        <div className="bg-[#1f1e1e] fixed top-0 left-0 h-screen w-full set_zindex">
           <DisplayWord
             words={searchData}
             wordDisplay={wordDisplay}

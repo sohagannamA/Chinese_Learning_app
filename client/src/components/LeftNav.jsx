@@ -19,7 +19,7 @@ export default function LeftNav() {
   return (
     <div>
       {windowWidth > 1000 ? (
-        <div className="active_nav_bg fixed top-[10%] bg-[rgb(19,31,36)] w-[250px] h-screen">
+        <div className="active_nav_bg  fixed top-[10%] bg-[rgb(19,31,36)] w-[250px] h-screen">
           <NavLink to="/">
             <div className="active_color flex items-center hover:bg-[rgb(28,49,63)] my-[20px] px-[50px] py-[10px] space-x-4">
               <RiHome5Line className="text-[25px] text-gray-400" />
