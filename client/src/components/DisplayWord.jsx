@@ -12,6 +12,11 @@ import { IoMdPause } from "react-icons/io";
 import { Host } from "../api/Host";
 import { IoMdAdd } from "react-icons/io";
 import { IoCheckmarkSharp } from "react-icons/io5";
+import { MdKeyboardArrowDown } from "react-icons/md";
+import { IoEyeOffOutline } from "react-icons/io5";
+import { IoEyeOutline } from "react-icons/io5";
+import { TfiTimer } from "react-icons/tfi";
+import { TbArrowAutofitRight } from "react-icons/tb";
 
 // Shuffle function
 const shuffleArray = (arr) => {
@@ -355,9 +360,11 @@ export default function DisplayWord({
   };
 
   const [isAutoChange, setAutoChange] = useState(false);
-  const [delay, setDelay] = useState(5);
+  const [delay, setDelay] = useState(null);
+  const delayTimerset = [0.5, 1, 2, 3];
 
-  // Run check whenever current word changes
+  const [isTimerCount, setIsTimerCount] = useState(false);
+
   useEffect(() => {
     if (current) {
       checkWordStatus(current); // pass whole word
@@ -375,7 +382,7 @@ export default function DisplayWord({
   }, [isAutoChange, delay, current.chinese]);
 
   useEffect(() => {
-    if (isAutoChange) {
+    if (isAutoChange && delay === 3) {
       speakChinese(current.chinese);
     }
   }, [current]);
@@ -429,14 +436,16 @@ export default function DisplayWord({
             ""
           )}
 
-          <div
-            onClick={() => setShowSetting(!showSetting)}
-            className="h-[35px] w-[35px] bg-[#414141] cursor-pointer hover:bg-[#585757] rounded-2xl flex items-center justify-center"
-          >
-            <RiSettings2Line className="text-gray-400" />
+          <div>
+            <div
+              onClick={() => setShowSetting(!showSetting)}
+              className="h-[35px] w-[35px] bg-[#414141] cursor-pointer hover:bg-[#585757] rounded-2xl flex items-center justify-center"
+            >
+              <RiSettings2Line className="text-gray-400" />
+            </div>
 
             {showSetting ? (
-              <div className=" absolute top-[100%] px-2 shadow-2xl right-10 z-50 rounded  bg-[#595959]">
+              <div className=" absolute top-[90%] px-2 shadow-2xl right-10 z-50 rounded   bg-[#595959]">
                 <div
                   onClick={() => {
                     setHideSentence(!isHideSentence);
@@ -447,9 +456,20 @@ export default function DisplayWord({
                     localStorage.getItem("hidesentence") === "true"
                       ? "bg-[#242424]"
                       : "bg-[#393737]"
-                  } cursor-pointer text-center text-[12px] hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
+                  } cursor-pointer  text-[12px] hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
                 >
-                  Hide Sentence
+                  <div className="flex items-center">
+                    {localStorage.getItem("hidesentence") === "true" ? (
+                      <IoEyeOffOutline className="text-[18px]" />
+                    ) : (
+                      <IoEyeOutline className="text-[18px]" />
+                    )}
+                    {localStorage.getItem("hidesentence") === "true" ? (
+                      <p className="ml-2">Show Sentence</p>
+                    ) : (
+                      <p className="ml-2">Hide Sentence</p>
+                    )}
+                  </div>
                 </div>
                 <div
                   onClick={() => {
@@ -457,19 +477,64 @@ export default function DisplayWord({
                   }}
                   className={`${
                     ispromodoro ? "bg-[#242424]" : "bg-[#393737]"
-                  } cursor-pointer text-center text-[12px] mb-2 hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
+                  } cursor-pointer  text-[12px] mb-2 hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
                 >
-                  Pomodoro
+                  <div className="flex items-center">
+                    <TfiTimer className="text-[18px]" />
+                    <p className="ml-2">Pomodoro</p>
+                  </div>
+                </div>
+                <div
+                  onClick={() => {
+                    setIsTimerCount(!isTimerCount);
+                  }}
+                  className={`${
+                    isTimerCount ? "bg-[#242424]" : "bg-[#393737]"
+                  } cursor-pointer text-[12px] mb-2 hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center">
+                      <TbArrowAutofitRight className="text-[18px]" />
+                      <p className="ml-2">Auto change delay</p>
+                    </div>
+                    <MdKeyboardArrowDown className="ml-3 text-[16px]" />
+                  </div>
                 </div>
 
-                <div
-                  onClick={() => setAutoChange(!isAutoChange)}
-                  className={`${
-                    isAutoChange ? "bg-[#242424]" : "bg-[#393737]"
-                  } cursor-pointer text-center text-[12px] mb-2 hover:bg-[#242424] text-gray-200 px-2 py-1 space-x-2 rounded mt-2`}
-                >
-                  Auto Change
-                </div>
+                {isTimerCount ? (
+                  <div className="mt-2 text-center bg-gray-800 mb-2">
+                    {delayTimerset.map((timer, index) => (
+                      <p
+                        onClick={() => {
+                          setAutoChange(true);
+                          setIsTimerCount(!isTimerCount);
+                          setDelay(timer);
+                        }}
+                        className={`py-1  cursor-pointer border-b-1 border-[#414449] text-[15px] ${
+                          delay === timer ? "text-[yellow]" : "text-gray-400"
+                        } `}
+                      >
+                        {timer}
+                      </p>
+                    ))}
+                    {isAutoChange ? (
+                      <p
+                        onClick={() => {
+                          setAutoChange(false),
+                            setDelay(null),
+                            setIsTimerCount(!isTimerCount);
+                        }}
+                        className="text-gray-400 text-[12px] py-1 cursor-pointer"
+                      >
+                        Normal
+                      </p>
+                    ) : (
+                      ""
+                    )}
+                  </div>
+                ) : (
+                  ""
+                )}
               </div>
             ) : (
               ""
