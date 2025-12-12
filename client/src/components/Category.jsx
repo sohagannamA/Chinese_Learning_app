@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
@@ -6,38 +7,29 @@ import { NavLink } from "react-router-dom";
 import { Host } from "../api/Host";
 
 export default function Category() {
-  const [stats, setStats] = useState([]);
-  const [loading, setLoading] = useState(true);
+  const token = localStorage.getItem("token");
 
-  useEffect(() => {
-    const fetchCategoryStats = async () => {
-      try {
-        const token = localStorage.getItem("token"); // JWT token
-        const res = await axios.get(`${Host.host}api/words/category-summary`, {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        });
+  // ✅ React Query v5 object signature
+  const { data: stats = [], isLoading } = useQuery({
+    queryKey: ["category-summary"],
+    queryFn: async () => {
+      const res = await axios.get(`${Host.host}api/words/category-summary`, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+      return res.data.categories || [];
+    },
+    staleTime: 5 * 60 * 1000, // 5 min cache
+    refetchOnMount: false,
+    refetchOnWindowFocus: false,
+  });
 
-        setStats(res.data.categories || []);
-      } catch (err) {
-        console.error("Category Stats Error:", err);
-        setStats([]);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchCategoryStats();
-  }, []);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>
     );
   }
 
-  if (stats.length === 0) {
+  if (!stats || stats.length === 0) {
     return (
       <p className="text-white text-center mt-10 text-xl">
         No categories found.

@@ -2,7 +2,7 @@ import React from "react";
 
 export default function MessageBox(props) {
   const { resetObject } = props;
-  const { icon, message, handleResetProgress, handleClose } = resetObject;
+  const { icon, message, handleResetProgress, handleClose,hskLevel } = resetObject;
 
   return (
     <div className="fixed top-0 left-0 h-screen w-full bg-[#00000090]">

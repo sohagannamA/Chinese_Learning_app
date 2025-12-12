@@ -32,7 +32,7 @@ router.get("/hsk-summary", authMiddleware, getHskSummary);
 router.get("/getword/:level", authMiddleware, getWordsByUser);
 router.get("/getall", authMiddleware, getAllWord);
 
-router.put("/reset-progress", authMiddleware, resetLearningProgress);
+router.put("/reset-progress/:hskLevel", authMiddleware, resetLearningProgress);
 router.put("/reset-category", authMiddleware, resetCategoryProgress);
 
 router.post("/toggle/:wordId", authMiddleware, markWordCompleted);
@@ -54,7 +54,7 @@ router.get(
 
 router.post("/addPracticesWord", authMiddleware, PracticesWord);
 router.get("/total", authMiddleware, getTotalPracticeWords);
-router.get("/check",authMiddleware,checkPracticesWord)
+router.get("/check", authMiddleware, checkPracticesWord);
 router.delete(
   "/deleteAllPracticeWords",
   authMiddleware,

@@ -1,24 +1,33 @@
 import Word from "../models/Word.js";
 import Category from "../models/Category.js";
+import UserTime from "../models/UserTime.js";
 
-// Add new word
+/* ============================
+   1️⃣ Add New Word (Optimized)
+=============================*/
 export const addWord = async (req, res) => {
   try {
-    const { chinese, pinyin, english, hskLevel, category, sentences } =
-      req.body;
-    console.log(category);
-
     if (!req.user) {
       return res.status(401).json({ message: "Unauthorized" });
     }
 
-    // Check if word already exists for this user with the same HSK level
+    const { chinese, pinyin, english, hskLevel, category, sentences } =
+      req.body;
+
+    // Fast Trim
+    const data = {
+      chinese: chinese?.trim(),
+      pinyin: pinyin?.trim(),
+      english: english?.trim(),
+    };
+
+    // Check existing (faster because lean())
     const existingWord = await Word.findOne({
-      chinese: chinese.trim(),
-      english: english.trim(),
+      chinese: data.chinese,
+      english: data.english,
       hskLevel,
       userId: req.user._id,
-    });
+    }).lean();
 
     if (existingWord) {
       return res.status(400).json({
@@ -26,179 +35,150 @@ export const addWord = async (req, res) => {
       });
     }
 
-    const newWord = new Word({
-      chinese: chinese.trim(),
-      pinyin: pinyin.trim(),
-      english: english.trim(),
+    const newWord = await Word.create({
+      ...data,
       hskLevel,
       category,
       sentences,
-      userId: req.user._id, // attach logged-in userId
+      userId: req.user._id,
     });
 
-    await newWord.save();
-
-    res.status(201).json({ message: "Word added successfully", word: newWord });
+    res.status(201).json({
+      message: "Word added successfully",
+      word: newWord,
+    });
   } catch (error) {
     console.error("Add Word Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
+/* ============================
+   2️⃣ Get Words by User (Optimized)
+=============================*/
 export const getWordsByUser = async (req, res) => {
   try {
-    const { level } = req.params; // URL query থেকে hskLevel নেয়া
-   
+    const { level } = req.params;
 
-    let query = {};
+    const query = level ? { hskLevel: level } : {};
 
-    if (level) {
-      query.hskLevel = level; // ফিল্টার যোগ
-    }
+    const words = await Word.find(query).lean();
 
-    const words = await Word.find(query);
-
-    if (!words || words.length === 0) {
-      return res.status(200).json({
-        success: false,
-        message: "No words found",
-        words: [],
-      });
-    }
-
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       count: words.length,
       words,
     });
   } catch (error) {
     console.error("Get Words Error:", error);
-    return res.status(500).json({ message: "Server error" });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
+/* ============================
+   3️⃣ Mark Word Completed Toggle
+=============================*/
 export const markWordCompleted = async (req, res) => {
   try {
     const { wordId } = req.params;
     const userId = req.user._id;
 
     const word = await Word.findById(wordId);
-    if (!word) {
-      return res.status(404).json({ success: false, msg: "Word not found" });
-    }
+    if (!word) return res.status(404).json({ msg: "Word not found" });
 
     const already = word.completedBy.includes(userId);
 
     if (already) {
-      // remove user
       word.completedBy = word.completedBy.filter(
         (id) => id.toString() !== userId.toString()
       );
     } else {
-      // add user
       word.completedBy.push(userId);
     }
 
     await word.save();
 
-    const isCompleted = !already;
-
     res.json({
       success: true,
-      isCompleted,
-      word, // 👈 return full updated word
+      isCompleted: !already,
+      word,
       msg: "Word updated success",
     });
   } catch (err) {
     console.error("Toggle error:", err);
-    res.status(500).json({ success: false, msg: "Server error" });
+    res.status(500).json({ msg: "Server error" });
   }
 };
 
+/* ============================
+   4️⃣ Get completion status
+=============================*/
 export const getWordCompleted = async (req, res) => {
   try {
     const { wordId } = req.params;
     const userId = req.user._id;
 
-    const word = await Word.findById(wordId);
-    if (!word) {
-      return res.status(404).json({ success: false, msg: "Word not found" });
-    }
+    const word = await Word.findById(wordId).lean();
+    if (!word) return res.status(404).json({ msg: "Word not found" });
 
     const isCompleted = word.completedBy.includes(userId);
 
     res.json({
       success: true,
       isCompleted,
-      word, // 👈 also return full word here
+      word,
     });
   } catch (err) {
     console.error("Get completion error:", err);
-    res.status(500).json({ success: false, msg: "Server error" });
+    res.status(500).json({ msg: "Server error" });
   }
 };
 
+/* ============================
+   5️⃣ Get All Words + Categories
+=============================*/
 export const getAllWord = async (req, res) => {
   try {
-    const userId = req.user._id;
-    // 1️⃣ Fetch Word & Category data for this user
-    const wordData = await Word.find().lean();
-    const categoryData = await Category.find().lean();
+    const [wordData, categoryData] = await Promise.all([
+      Word.find().lean(),
+      Category.find().lean(),
+    ]);
 
-    // 2️⃣ Merge both arrays into one
     const allWords = [...wordData, ...categoryData];
 
-    // 3️⃣ Check if merged array is empty
-    if (allWords.length === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "No data found for this user",
-      });
-    }
-
-    // 4️⃣ Return merged array
-    return res.status(200).json({
+    res.status(200).json({
       success: true,
       data: allWords,
     });
   } catch (err) {
     console.error(err);
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-    });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
-// User Time
-import UserTime from "../models/UserTime.js";
-
+/* ============================
+   6️⃣ Save User Time
+=============================*/
 export const saveTime = async (req, res) => {
   try {
     const { userId, duration } = req.body;
-
     const today = new Date().toISOString().split("T")[0];
 
-    let record = await UserTime.findOne({ userId, date: today });
+    const record = await UserTime.findOneAndUpdate(
+      { userId, date: today },
+      { $inc: { duration } },
+      { new: true, upsert: true }
+    );
 
-    if (!record) {
-      record = new UserTime({
-        userId,
-        date: today,
-        duration,
-      });
-    } else {
-      record.duration += duration; // Add time
-    }
-
-    await record.save();
-
-    res.json({ success: true, message: "Time saved" });
+    res.json({ success: true, message: "Time saved", record });
   } catch (err) {
-    res.status(500).json({ success: false, message: "Server error" });
+    res.status(500).json({ message: "Server error" });
   }
 };
 
+/* ============================
+   7️⃣ Last 7 Days Time
+=============================*/
 export const lastSevenDays = async (req, res) => {
   try {
     const { userId } = req.query;
@@ -213,7 +193,7 @@ export const lastSevenDays = async (req, res) => {
         $gte: past7.toISOString().split("T")[0],
         $lte: today.toISOString().split("T")[0],
       },
-    });
+    }).lean();
 
     const total = records.reduce((sum, r) => sum + r.duration, 0);
 

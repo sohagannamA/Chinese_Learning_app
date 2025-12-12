@@ -1,19 +1,17 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useLocation } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import DisplayWord from "./DisplayWord";
 import { IoMdArrowDown, IoMdArrowUp } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 import { Host } from "../api/Host";
-import { useLocation } from "react-router-dom";
 
 export default function HSKSection() {
+  const location = useLocation();
   const [wordDisplay, setWordDisplay] = useState(false);
   const [selectedPartWords, setSelectedPartWords] = useState([]);
-  const [categories, setCategories] = useState([]);
   const [expandedCategory, setExpandedCategory] = useState(null);
-  const [topHSKLevel, setTopHSKLevel] = useState("");
-  const [totalWords, setTotalWords] = useState(0);
-  const [totalCompleted, setTotalCompleted] = useState(0);
 
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
@@ -21,70 +19,6 @@ export default function HSKSection() {
   const pathWithoutSlash = location.pathname.startsWith("/")
     ? location.pathname.substring(1)
     : location.pathname;
-
-  const fetchWords = async () => {
-    try {
-      const res = await axios.get(`${Host.host}api/words/getword/${pathWithoutSlash}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      });
-
-      const words = res.data.words || [];
-
-
-      if (!words.length) {
-        setCategories([]);
-        setTopHSKLevel("");
-        setTotalWords(0);
-        setTotalCompleted(0);
-        return;
-      }
-
-      // Mark completion per user
-      const wordsWithCompletion = words.map((w) => ({
-        ...w,
-        isCompleted: w.completedBy.includes(userId),
-      }));
-
-      // === CATEGORY SECTIONS (left/right) ===
-      const PART_SIZE = 5;
-      const categoryMap = {};
-      wordsWithCompletion.forEach((word) => {
-        const category = word.category || "UNCATEGORIZED";
-        if (!categoryMap[category]) categoryMap[category] = [];
-        categoryMap[category].push(word);
-      });
-
-      const categoryData = Object.keys(categoryMap).map((cat) => {
-        const catWords = categoryMap[cat];
-        const parts = [];
-        for (let i = 0; i < catWords.length; i += PART_SIZE) {
-          parts.push(catWords.slice(i, i + PART_SIZE));
-        }
-        return {
-          category: cat.toUpperCase(),
-          words: catWords,
-          parts,
-        };
-      });
-
-      setCategories(categoryData);
-
-      // === TOP HSK PROGRESS BAR ===
-      const firstHSK = wordsWithCompletion.find((w) => w.hskLevel);
-      if (firstHSK) setTopHSKLevel(firstHSK.hskLevel);
-
-      const total = wordsWithCompletion.length;
-      const completed = wordsWithCompletion.filter((w) => w.isCompleted).length;
-      setTotalWords(total);
-      setTotalCompleted(completed);
-    } catch (err) {
-      console.error("Fetch words error:", err);
-    }
-  };
-
-  useEffect(() => {
-    if (token) fetchWords();
-  }, [token]);
 
   const openPart = (partWords) => {
     setSelectedPartWords(partWords);
@@ -99,32 +33,84 @@ export default function HSKSection() {
     setExpandedCategory((prev) => (prev === category ? null : category));
   };
 
-  const toggleWordComplete = async (wordId) => {
-    try {
-      const url = `${Host.host}api/words/toggle/${wordId}`;
-      await axios.post(
-        url,
-        {},
+  // ✅ React Query for superfast fetch
+  const {
+    data: words = [],
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["hsk-words", pathWithoutSlash],
+    queryFn: async () => {
+      if (!pathWithoutSlash) return [];
+      const res = await axios.get(
+        `${Host.host}api/words/getword/${pathWithoutSlash}`,
         { headers: { Authorization: `Bearer ${token}` } }
       );
-      fetchWords();
+      return (res.data.words || []).map((w) => ({
+        ...w,
+        isCompleted: w.completedBy.includes(userId),
+      }));
+    },
+    enabled: !!pathWithoutSlash,
+    staleTime: 5 * 60 * 1000, // cache 5 min
+    refetchOnWindowFocus: false,
+  });
+
+  // === CATEGORY MAP ===
+  const PART_SIZE = 5;
+  const categories = [];
+  words.forEach((word) => {
+    const catName = word.category || "UNCATEGORIZED";
+    let cat = categories.find((c) => c.category === catName.toUpperCase());
+    if (!cat) {
+      cat = { category: catName.toUpperCase(), words: [], parts: [] };
+      categories.push(cat);
+    }
+    cat.words.push(word);
+  });
+
+  categories.forEach((cat) => {
+    cat.parts = [];
+    for (let i = 0; i < cat.words.length; i += PART_SIZE) {
+      cat.parts.push(cat.words.slice(i, i + PART_SIZE));
+    }
+  });
+
+  // === TOP HSK PROGRESS BAR ===
+  const topHSKLevel = words.find((w) => w.hskLevel)?.hskLevel || "HSK";
+  const totalWords = words.length;
+  const totalCompleted = words.filter((w) => w.isCompleted).length;
+  const globalPercent =
+    totalWords > 0 ? Math.round((totalCompleted / totalWords) * 100) : 0;
+
+  const toggleWordComplete = async (wordId) => {
+    try {
+      await axios.post(
+        `${Host.host}api/words/toggle/${wordId}`,
+        {},
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
+      );
+      refetch();
     } catch (err) {
-      console.error("Toggle word error:", err);
+      console.error(err);
     }
   };
 
-  // --- RESET CATEGORY ---
   const resetCategory = async (catData) => {
     try {
       const wordIds = catData.words.map((w) => w._id);
       await axios.put(
         `${Host.host}words/reset-category`,
         { wordIds },
-        { headers: { Authorization: `Bearer ${token}` } }
+        {
+          headers: { Authorization: `Bearer ${token}` },
+        }
       );
-      fetchWords();
+      refetch();
     } catch (err) {
-      console.error("Reset category error:", err);
+      console.error(err);
     }
   };
 
@@ -147,7 +133,6 @@ export default function HSKSection() {
             {completedWords}/{totalWords}
           </p>
           <div className="flex items-center space-x-2">
-            {/* Expand/Collapse */}
             <div
               onClick={(e) => {
                 e.stopPropagation();
@@ -162,7 +147,6 @@ export default function HSKSection() {
               )}
             </div>
 
-            {/* Delete/Reset */}
             <div
               onClick={(e) => {
                 e.stopPropagation();
@@ -215,8 +199,11 @@ export default function HSKSection() {
       );
     });
 
-  const globalPercent =
-    totalWords > 0 ? Math.round((totalCompleted / totalWords) * 100) : 0;
+  if (isLoading) {
+    return (
+      <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>
+    );
+  }
 
   return (
     <div className="my-3 responsive_class set_width mb-20">
@@ -226,7 +213,7 @@ export default function HSKSection() {
             words={selectedPartWords}
             wordDisplay={wordDisplay}
             setWordDisplay={setWordDisplay}
-            fetchWords={fetchWords}
+            fetchWords={refetch}
             from="hskPart"
             toggleWordComplete={toggleWordComplete}
           />
@@ -235,7 +222,7 @@ export default function HSKSection() {
 
       {/* ===== TOP HSK PROGRESS BAR ===== */}
       <div className="mb-2 p-4 bg-[rgb(26,41,49)] rounded-lg shadow flex items-center gap-4">
-        <p className="text-gray-300 font-semibold">{topHSKLevel || "HSK"}</p>
+        <p className="text-gray-300 font-semibold">{topHSKLevel}</p>
         <div className="flex-1 bg-gray-500 h-2 rounded">
           <div
             className="h-full bg-green-500 rounded transition-all duration-500"

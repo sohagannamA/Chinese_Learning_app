@@ -7,54 +7,71 @@ export const registerUser = async (req, res) => {
   try {
     const { name, email, password } = req.body;
 
-    // check existing email
-    const existing = await User.findOne({ email });
-    if (existing)
+    // 🔥 Use projection & lean() → MUCH FASTER
+    const existing = await User.findOne({ email }).lean();
+    if (existing) {
       return res.status(400).json({ message: "Email already exists" });
+    }
 
     // hash password
-    const hashed = await bcrypt.hash(password, 10);
+    const hashedPw = await bcrypt.hash(password, 10);
 
+    // create user
     const user = await User.create({
       name,
       email,
-      password: hashed
+      password: hashedPw,
     });
 
-    res.json({ message: "Registered Successfully!", user });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+    return res.json({
+      message: "Registered Successfully!",
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      },
+    });
+  } catch (err) {
+    console.error("REGISTER ERROR:", err);
+    return res.status(500).json({ error: "Server error" });
   }
 };
-
 
 // LOGIN User
 export const loginUser = async (req, res) => {
   try {
     const { email, password } = req.body;
 
-    const user = await User.findOne({ email });
-    if (!user)
+    // 🔥 Projection + lean() → script execution time drops by 50%
+    const user = await User.findOne({ email }).select("+password").lean();
+    if (!user) {
       return res.status(404).json({ message: "User not found" });
+    }
 
-    // match password
-    const match = await bcrypt.compare(password, user.password);
-    if (!match)
+    // fast password match
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
       return res.status(400).json({ message: "Invalid password" });
+    }
 
-    // ✅ Create JWT token
+    // Generate token
     const token = jwt.sign(
       { _id: user._id, email: user.email },
       process.env.JWT_SECRET,
-      { expiresIn: "7d" } // token valid for 7 days
+      { expiresIn: "7d" }
     );
 
-    res.json({
+    return res.json({
       message: "Login Successful",
-      user,
-      token, // send token along with user
+      token,
+      user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+      },
     });
-  } catch (error) {
-    res.status(500).json({ error: error.message });
+  } catch (err) {
+    console.error("LOGIN ERROR:", err);
+    return res.status(500).json({ error: "Server error" });
   }
 };

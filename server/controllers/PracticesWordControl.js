@@ -1,41 +1,43 @@
 import Word from "../models/PracticesWord.js";
 
-// Add new word
+/* ================================
+   1️⃣ Toggle Practice Word (Fast)
+================================= */
 export const PracticesWord = async (req, res) => {
   try {
-    const { chinese, pinyin, english, sentences } = req.body;
     const userId = req.user.id;
+    const { chinese, pinyin, english, sentences } = req.body;
 
-    // Check if this exact word already exists for this user
-    const existingWord = await Word.findOne({
+    const chineseTrim = chinese.trim();
+    const englishTrim = english.trim();
+
+    // Fast check using lean()
+    const existing = await Word.findOne({
       userId,
-      chinese: chinese.trim(),
-      english: english.trim(),
-    });
+      chinese: chineseTrim,
+      english: englishTrim,
+    }).lean();
 
-    // --------- TOGGLE LOGIC ---------
-    if (existingWord) {
-      // If exists → remove it (toggle off)
-      await Word.findByIdAndDelete(existingWord._id);
+    // --------- TOGGLE OFF (Delete) ---------
+    if (existing) {
+      await Word.deleteOne({ _id: existing._id });
 
       return res.status(200).json({
         success: true,
         toggled: "removed",
         message: "Word removed successfully",
-        wordId: existingWord._id,
+        wordId: existing._id,
       });
     }
 
-    // --------- ADD NEW WORD (toggle on) ---------
-    const newWord = new Word({
-      chinese: chinese.trim(),
+    // --------- TOGGLE ON (Create) ---------
+    const newWord = await Word.create({
+      chinese: chineseTrim,
       pinyin: pinyin.trim(),
-      english: english.trim(),
+      english: englishTrim,
       sentences,
       userId,
     });
-
-    await newWord.save();
 
     return res.status(201).json({
       success: true,
@@ -44,31 +46,33 @@ export const PracticesWord = async (req, res) => {
       word: newWord,
     });
   } catch (error) {
-    console.error("PracticesWord Toggle Error:", error);
-    return res.status(500).json({
-      success: false,
-      message: "Server error",
-    });
+    console.error("Practice Word Error:", error);
+    res.status(500).json({ success: false, message: "Server error" });
   }
 };
 
+/* ========================================
+   2️⃣ Total + All Practice Words (Fast)
+========================================= */
 export const getTotalPracticeWords = async (req, res) => {
   try {
     const userId = req.user.id;
 
-    // Total count
-    const count = await Word.countDocuments({ userId });
-
-    // All words for this user
-    const words = await Word.find({ userId }).sort({ createdAt: -1 });
+    const [count, words] = await Promise.all([
+      Word.countDocuments({ userId }),
+      Word.find({ userId }).sort({ createdAt: -1 }).lean(),
+    ]);
 
     res.json({ totalWords: count, words });
   } catch (error) {
-    console.error(error);
+    console.error("Get Practice Words Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
+/* ========================================
+   3️⃣ Delete All Practice Words (Fast)
+========================================= */
 export const deleteAllPracticeWords = async (req, res) => {
   try {
     const userId = req.user.id;
@@ -77,32 +81,34 @@ export const deleteAllPracticeWords = async (req, res) => {
 
     res.json({ message: "All practice words deleted successfully" });
   } catch (error) {
-    console.error(error);
+    console.error("Delete Practice Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
+/* ========================================
+   4️⃣ Check if a Practice Word Exists
+========================================= */
 export const checkPracticesWord = async (req, res) => {
   try {
-    const userId = req.user._id;
-    const { chinese } = req.query; // receive chinese word
+    const userId = req.user.id;
+    const { chinese } = req.query;
 
     if (!chinese) {
       return res.status(400).json({ message: "Chinese word required" });
     }
 
-    // Find if this word is already saved by the user
     const exists = await Word.findOne({
       userId,
-      chinese: chinese.trim(), // check by chinese field
-    });
+      chinese: chinese.trim(),
+    }).lean();
 
-    return res.status(200).json({
-      exists: !!exists, // true if word exists, false otherwise
+    res.status(200).json({
+      exists: !!exists,
       word: exists || null,
     });
   } catch (error) {
-    console.error("Check Word Error:", error);
+    console.error("Check Practice Word Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };

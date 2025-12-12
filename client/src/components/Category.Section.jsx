@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import DisplayWord from "./DisplayWord";
 import { Host } from "../api/Host";
 
@@ -9,96 +10,68 @@ export default function CategorySection() {
   const [wordDisplay, setWordDisplay] = useState(false);
   const [selectedPartWords, setSelectedPartWords] = useState([]);
 
-  const [parts, setParts] = useState([]); // only PART-1, PART-2...
-  const [allWords, setAllWords] = useState([]); // ALL WORD list
-
   const [categoryName, setCategoryName] = useState("");
-  const [totalCategoryWords, setTotalCategoryWords] = useState(0);
-  const [totalCategoryCompleted, setTotalCategoryCompleted] = useState(0);
-
   const token = localStorage.getItem("token");
   const userId = localStorage.getItem("userId");
 
-  // Fetch words by category
-  const fetchCategoryWords = async (category) => {
-    try {
+  // get category name from path
+  const pathParts = location.pathname.split("/");
+  const categoryFromPath = pathParts[pathParts.length - 1];
+  if (categoryFromPath && categoryName !== categoryFromPath.toUpperCase()) {
+    setCategoryName(categoryFromPath.toUpperCase());
+  }
+
+  // ✅ React Query for superfast fetching
+  const {
+    data: words = [],
+    isLoading,
+    refetch,
+  } = useQuery({
+    queryKey: ["category-words", categoryFromPath],
+    queryFn: async () => {
+      if (!categoryFromPath) return [];
       const res = await axios.get(
-        `${Host.host}api/words/get-category-word/${category}`,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        }
+        `${Host.host}api/words/get-category-word/${categoryFromPath}`,
+        { headers: { Authorization: `Bearer ${token}` } }
       );
-
-      const words = res.data.words || [];
-
-      if (!words.length) {
-        setParts([]);
-        setAllWords([]);
-        setTotalCategoryWords(0);
-        setTotalCategoryCompleted(0);
-        return;
-      }
-
-      // Add completion status
-      const wordsWithCompletion = words.map((w) => ({
+      const allWords = res.data.words || [];
+      return allWords.map((w) => ({
         ...w,
         isCompleted: w.completedBy?.some((id) => id.toString() === userId),
       }));
+    },
+    enabled: !!categoryFromPath, // only fetch if category exists
+    staleTime: 5 * 60 * 1000, // 5 min cache
+    refetchOnWindowFocus: false,
+  });
 
-      // Save ALL WORD list
-      setAllWords(wordsWithCompletion);
-
-      // Split into parts of 5
-      const PART_SIZE = 5;
-      const generatedParts = [];
-
-      for (let i = 0; i < wordsWithCompletion.length; i += PART_SIZE) {
-        generatedParts.push(wordsWithCompletion.slice(i, i + PART_SIZE));
-      }
-
-      setParts(generatedParts);
-
-      // Save count
-      setTotalCategoryWords(wordsWithCompletion.length);
-      setTotalCategoryCompleted(
-        wordsWithCompletion.filter((w) => w.isCompleted).length
-      );
-    } catch (err) {
-      console.error("Category fetch error:", err);
-      setParts([]);
-      setAllWords([]);
-      setTotalCategoryWords(0);
-      setTotalCategoryCompleted(0);
-    }
-  };
-
-  // Load category
-  useEffect(() => {
-    const pathParts = location.pathname.split("/");
-    const categoryFromPath = pathParts[pathParts.length - 1];
-
-    if (categoryFromPath) {
-      setCategoryName(categoryFromPath.toUpperCase());
-      fetchCategoryWords(categoryFromPath);
-    }
-  }, [location]);
+  // Split into parts of 5
+  const PART_SIZE = 5;
+  const parts = [];
+  for (let i = 0; i < words.length; i += PART_SIZE) {
+    parts.push(words.slice(i, i + PART_SIZE));
+  }
+  const totalCategoryWords = words.length;
+  const totalCategoryCompleted = words.filter((w) => w.isCompleted).length;
 
   const openPart = (words) => {
     setSelectedPartWords(words);
     setWordDisplay(true);
   };
 
-  const getCompleted = (words) => {
-    return words.filter((w) => w.isCompleted === true).length;
-  };
-
+  const getCompleted = (words) => words.filter((w) => w.isCompleted).length;
   const progressPercent =
     totalCategoryWords > 0
       ? Math.round((totalCategoryCompleted / totalCategoryWords) * 100)
       : 0;
 
-  // Final List = ALL WORD + PARTS
-  const list = [allWords, ...parts];
+  const list = [words, ...parts];
+
+  if (isLoading) {
+    return (
+      <p className="text-gray-400 text-center mt-10 text-xl">Loading...</p>
+    );
+  }
 
   return (
     <div className="my-3 set_width responsive_class mb-20">
@@ -108,7 +81,7 @@ export default function CategorySection() {
             words={selectedPartWords}
             wordDisplay={wordDisplay}
             setWordDisplay={setWordDisplay}
-            fetchWords={() => fetchCategoryWords(categoryName)}
+            fetchWords={refetch}
             from="category"
           />
         </div>
