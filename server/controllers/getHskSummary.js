@@ -2,108 +2,138 @@ import mongoose from "mongoose";
 import Word from "../models/Word.js";
 import Category from "../models/Category.js";
 
-/* ===============================
-   1️⃣ Get HSK Summary (Optimized)
-=============================== */
 export const getHskSummary = async (req, res) => {
   try {
-    const userIdStr = req.user._id.toString();
+    const userId = req.user._id.toString(); // convert to string
 
-    // Fetch all words as lean() → faster
-    const words = await Word.find().lean();
+    // Fetch all words
+    const words = await Word.find();
+    console.log(words)
 
-    if (!words.length)
-      return res
-        .status(200)
-        .json({ message: "No words added yet", hskLevels: [] });
+    if (words.length === 0) {
+      return res.status(200).json({
+        message: "No words added yet",
+        hskLevels: [],
+      });
+    }
 
+    // Group by HSK level
     const hskGroups = {};
 
     words.forEach((word) => {
-      const level = word.hskLevel;
-      if (!hskGroups[level])
-        hskGroups[level] = {
-          hskLevel: level,
+      if (!hskGroups[word.hskLevel]) {
+        hskGroups[word.hskLevel] = {
+          hskLevel: word.hskLevel,
           totalWords: 0,
           completedWords: 0,
-          words: [],
+          words: [], // store word details
         };
+      }
 
-      hskGroups[level].totalWords++;
-      if (word.completedBy?.some((id) => id.toString() === userIdStr))
-        hskGroups[level].completedWords++;
-      hskGroups[level].words.push(word);
+      hskGroups[word.hskLevel].totalWords++;
+
+      // ✅ Correct ObjectId comparison
+      if (
+        word.completedBy &&
+        word.completedBy.some((id) => id.toString() === userId)
+      ) {
+        hskGroups[word.hskLevel].completedWords++;
+      }
+
+      // Add word details if needed
+      hskGroups[word.hskLevel].words.push(word);
     });
 
-    res
-      .status(200)
-      .json({ success: true, hskLevels: Object.values(hskGroups) });
-  } catch (err) {
-    console.error("HSK Summary Error:", err);
+    // Convert object to array
+    const result = Object.values(hskGroups);
+    console.log(result);
+
+    res.status(200).json({
+      success: true,
+      hskLevels: result,
+    });
+  } catch (error) {
+    console.error("HSK Summary Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
-/* ===============================
-   2️⃣ Get Category Summary
-=============================== */
 export const getCategorySummary = async (req, res) => {
   try {
-    const userIdStr = req.user._id.toString();
+    const userId = req.user._id.toString(); // convert to string
 
-    // Use lean() for faster read
-    const words = await Word.find().lean();
+    // Fetch all words
+    const words = await Category.find(); // Use Word model, not Category, to get word details
 
-    if (!words.length)
-      return res
-        .status(200)
-        .json({ message: "No words added yet", categories: [] });
+    if (words.length === 0) {
+      return res.status(200).json({
+        message: "No words added yet",
+        categories: [],
+      });
+    }
 
+    // Group by category
     const categoryGroups = {};
 
     words.forEach((word) => {
-      const cat = word.category || "UNCATEGORIZED";
-      if (!categoryGroups[cat])
-        categoryGroups[cat] = {
-          category: cat,
+      const category = word.category || "UNCATEGORIZED";
+
+      if (!categoryGroups[category]) {
+        categoryGroups[category] = {
+          category: category,
           totalWords: 0,
           completedWords: 0,
-          words: [],
+          words: [], // store word details
         };
+      }
 
-      categoryGroups[cat].totalWords++;
-      if (word.completedBy?.some((id) => id.toString() === userIdStr))
-        categoryGroups[cat].completedWords++;
-      categoryGroups[cat].words.push(word);
+      categoryGroups[category].totalWords++;
+
+      // ✅ Check if this user has completed the word
+      if (
+        word.completedBy &&
+        word.completedBy.some((id) => id.toString() === userId)
+      ) {
+        categoryGroups[category].completedWords++;
+      }
+
+      categoryGroups[category].words.push(word);
     });
 
-    res
-      .status(200)
-      .json({ success: true, categories: Object.values(categoryGroups) });
-  } catch (err) {
-    console.error("Category Summary Error:", err);
+    // Convert object → array
+    const result = Object.values(categoryGroups);
+
+    res.status(200).json({
+      success: true,
+      categories: result,
+    });
+  } catch (error) {
+    console.error("Category Summary Error:", error);
     res.status(500).json({ message: "Server error" });
   }
 };
 
-/* ===============================
-   3️⃣ Get All Words by Category
-=============================== */
 export const getAllWordsInParts = async (req, res) => {
   try {
-    const { categoryName } = req.params;
-    if (!categoryName)
-      return res
-        .status(400)
-        .json({ success: false, message: "Category is required" });
+    const { categoryName } = req.params; // category from path
 
-    const words = await Word.find({ category: categoryName }).lean();
-    if (!words.length)
+    if (!categoryName) {
+      return res.status(400).json({
+        success: false,
+        message: "Category is required",
+      });
+    }
+
+    // Fetch words for this user and category
+    const words = await Category.find({ category: categoryName });
+
+    if (!words || words.length === 0) {
       return res.status(200).json({
         success: false,
         message: `No words found for category: ${categoryName}`,
         words: [],
       });
+    }
 
     res.status(200).json({
       success: true,
@@ -111,42 +141,48 @@ export const getAllWordsInParts = async (req, res) => {
       count: words.length,
       words,
     });
-  } catch (err) {
-    console.error("Get Category Words Error:", err);
-    res.status(500).json({ success: false, message: "Server error" });
+  } catch (error) {
+    console.error("Get Category Words Error:", error);
+    res.status(500).json({
+      success: false,
+      message: "Server error",
+    });
   }
 };
 
-/* ===============================
-   4️⃣ Toggle Word Completion
-=============================== */
 export const markWordCompletedCategory = async (req, res) => {
   try {
     const { wordId } = req.params;
-    const userId = req.user?._id;
+    const userId = req.user?._id; // optional chaining for safety
     if (!userId)
       return res.status(401).json({ success: false, msg: "Unauthorized" });
 
-    const word = await Word.findById(wordId);
-    if (!word)
+    const word = await Category.findById(wordId);
+    if (!word) {
       return res.status(404).json({ success: false, msg: "Word not found" });
+    }
 
+    // Ensure completedBy is always an array
     if (!Array.isArray(word.completedBy)) word.completedBy = [];
 
-    const already = word.completedBy.some(
+    const alreadyCompleted = word.completedBy.some(
       (id) => id.toString() === userId.toString()
     );
-    if (already)
+
+    if (alreadyCompleted) {
       word.completedBy = word.completedBy.filter(
         (id) => id.toString() !== userId.toString()
       );
-    else word.completedBy.push(userId);
+    } else {
+      word.completedBy.push(userId);
+    }
 
     await word.save();
+
     res.json({
       success: true,
-      isCompleted: !already,
-      word,
+      isCompleted: !alreadyCompleted,
+      word, // full updated word
       msg: "Word updated successfully",
     });
   } catch (err) {
@@ -155,28 +191,31 @@ export const markWordCompletedCategory = async (req, res) => {
   }
 };
 
-/* ===============================
-   5️⃣ Get Word Completion Status
-=============================== */
 export const getWordCompletedCategory = async (req, res) => {
   try {
     const { wordId } = req.params;
-    const userId = req.user?._id;
-    if (!userId)
+    const userId = req.user?._id; // logged-in user
+
+    if (!userId) {
       return res.status(401).json({ success: false, msg: "Unauthorized" });
+    }
 
-    const word = await Word.findById(wordId).lean();
-    if (!word)
+    const word = await Category.findById(wordId);
+    if (!word) {
       return res.status(404).json({ success: false, msg: "Word not found" });
+    }
 
-    const isCompleted =
-      word.completedBy?.some((id) => id.toString() === userId.toString()) ||
-      false;
+    // Ensure completedBy exists
+    if (!Array.isArray(word.completedBy)) word.completedBy = [];
+
+    const isCompleted = word.completedBy.some(
+      (id) => id.toString() === userId.toString()
+    );
 
     res.json({
       success: true,
       isCompleted,
-      word,
+      word, // full word object
       msg: "Word completion status fetched successfully",
     });
   } catch (err) {
@@ -185,61 +224,67 @@ export const getWordCompletedCategory = async (req, res) => {
   }
 };
 
-/* ===============================
-   6️⃣ Reset User Learning Progress (All Words)
-=============================== */
+
+
+
+
 export const resetLearningProgress = async (req, res) => {
   try {
-    const userId = req.user._id
-    const { hskLevel } = req.params; // <-- get HSK-1 / HSK-2 etc
+    // JWT থেকে আসা userId (string)
+    const userIdStr = req.user._id;
 
-    if (!hskLevel) {
-      return res.status(400).json({
-        success: false,
-        message: "HSK level is required.",
-      });
-    }
+    // ObjectId type হিসেবে convert করুন
+    const userId = new mongoose.Types.ObjectId(userIdStr);
 
-    await Word.updateMany(
-      { hskLevel, completedBy: userId }, // <-- Filter by HSK level
-      { $pull: { completedBy: userId } } // <-- Remove user from completed list
+    // সমস্ত word থেকে এই userId remove করুন completedBy array থেকে
+    const updatedWord = await Word.updateMany(
+      { completedBy: userId }, // match only words that contain user
+      { $pull: { completedBy: userId } }
     );
+
+    console.log("Update progressData", updatedWord);
 
     res.status(200).json({
       success: true,
-      message: `${hskLevel} progress reset successfully.`,
+      message: "Learning progress reset successfully.",
     });
-  } catch (err) {
-    console.error("Reset Progress Error:", err);
+  } catch (error) {
+    console.error("Reset Progress Error:", error);
     res.status(500).json({
       success: false,
       message: "Failed to reset progress.",
-      error: err.message,
+      error: error.message,
     });
   }
 };
 
-/* ===============================
-   7️⃣ Reset Category Progress (Specific Words)
-=============================== */
 export const resetCategoryProgress = async (req, res) => {
   try {
-    const userId = req.user._id;
-    const { wordIds } = req.body;
-    if (!Array.isArray(wordIds) || wordIds.length === 0)
-      return res.status(400).json({ message: "No word IDs provided" });
+    const user = req.user;
+    if (!user?._id)
+      return res.status(401).json({ message: "User not authenticated" });
 
+    const userId = user._id;
+    const { wordIds } = req.body;
+
+    if (!wordIds || !Array.isArray(wordIds) || wordIds.length === 0) {
+      return res.status(400).json({ message: "No word IDs provided" });
+    }
+
+    // Correctly convert IDs
     const objectIds = wordIds.map((id) => new mongoose.Types.ObjectId(id));
+
     const result = await Word.updateMany(
       { _id: { $in: objectIds } },
       { $pull: { completedBy: userId } }
     );
 
-    res
-      .status(200)
-      .json({ success: true, modifiedCount: result.modifiedCount });
-  } catch (err) {
-    console.error("Reset category error:", err);
+    res.status(200).json({
+      success: true,
+      modifiedCount: result.modifiedCount,
+    });
+  } catch (error) {
+    console.error("Reset category error:", error);
     res.status(500).json({ success: false, message: "Server error" });
   }
 };
